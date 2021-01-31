@@ -55,7 +55,10 @@ export const Carousel: React.FC<IProps> = (props) => {
                 onLeft();
                 const left = slide > 0 ? slide - 1 : slide;
                 const offset = itemsRef.current[left]?.offsetLeft ?? 0
-                actionRef.current?.scrollTo({ left: offset, behavior: "smooth" })
+                const parent = (actionRef.current?.clientWidth ?? 0);
+                const current = (itemsRef.current[left]?.clientWidth ?? 0);
+                const delta = offset - (parent - current) / 2
+                actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
             }} style={{
                 position: "absolute"
             }}>
@@ -76,16 +79,19 @@ export const Carousel: React.FC<IProps> = (props) => {
                 {
                     titles.map((title, index) => (
                         <div
+                            key={index}
                             ref={el => itemsRef.current[index] = el}>
                             <Button
                                 black
                                 asSubTitle
-                                key={index}
                                 active={index === slide}
                                 onClick={() => {
                                     onCustom(index);
                                     const left = (itemsRef.current[index]?.offsetLeft ?? 0);
-                                    itemsRef.current[index]?.parentElement?.scrollTo({ left, behavior: "smooth" })
+                                    const parent = (itemsRef.current[index]?.parentElement?.clientWidth ?? 0);
+                                    const current = (itemsRef.current[index]?.clientWidth ?? 0);
+                                    const delta = left - (parent - current) / 2
+                                    itemsRef.current[index]?.parentElement?.scrollTo({ left: delta, behavior: "smooth" })
                                 }}>{title}</Button>
                         </div>
                     ))
@@ -95,7 +101,10 @@ export const Carousel: React.FC<IProps> = (props) => {
                 onRight();
                 const right = slide < children.length - 1 ? slide + 1 : slide;
                 const offset = itemsRef.current[right]?.offsetLeft ?? 0
-                actionRef.current?.scrollTo({ left: offset, behavior: "smooth" })
+                const parent = (actionRef.current?.clientWidth ?? 0);
+                const current = (itemsRef.current[right]?.clientWidth ?? 0);
+                const delta = offset - (parent - current) / 2
+                actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
             }} style={{
                 position: "absolute",
                 right: 0,

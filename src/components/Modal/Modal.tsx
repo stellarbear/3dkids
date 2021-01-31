@@ -1,4 +1,3 @@
-import { debug } from 'console';
 import * as React from 'react';
 import { ClickAway } from '../ClickAway';
 import { Row } from '../Flex';
@@ -14,8 +13,6 @@ export const Modal: React.FC = (props) => {
     const { children } = props;
     const [isOpened, setOpen] = React.useState(false);
     const [state, setState] = React.useState<React.ReactNode | null>(null);
-
-    console.log(isOpened)
 
     const call = (node: React.ReactNode) => {
         setOpen(true);
