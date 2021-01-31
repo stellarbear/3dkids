@@ -60,7 +60,8 @@ export const Button: React.FC<IProps> = (props) => {
     const content = renderContent(props, children)
 
     return (
-        <div className={active ? `${className} ${className}-active` : `${className}`} onClick={onClick}>
+        <div style={{...style, userSelect: "none"}}
+         className={active ? `${className} ${className}-active` : `${className}`} onClick={onClick}>
             {content}
         </div>
     )

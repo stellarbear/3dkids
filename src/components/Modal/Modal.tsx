@@ -1,5 +1,6 @@
 import { debug } from 'console';
 import * as React from 'react';
+import { ClickAway } from '../ClickAway';
 import { Row } from '../Flex';
 
 interface IModal {
@@ -49,18 +50,14 @@ const ModalContent: React.FC<IProps> = (props) => {
     const { opened, children, onClose } = props;
 
     return (
-        <div style={{
-            position: "fixed",
-            left: opened ? 0 : "50%",
-            top: opened ? 0 : "50%",
-            width: opened ? "100vw" : "0",
-            height: opened ? "100vh" : "0",
-            transition: "all 0.2s"
-        }} onClick={onClose}>
-            <Row align="center" justify="center" style={{height: "100%"}}>
+        <ClickAway
+            opened={opened}
+            onClick={onClose}
+        >
+            <Row align="center" justify="center" style={{ height: "100%" }}>
                 {children}
             </Row>
-        </div>
+        </ClickAway>
     )
 }
 

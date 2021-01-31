@@ -1,5 +1,4 @@
 import React from 'react';
-import { Slide } from './components';
 import { Modal } from './components/Modal';
 import { Scroll } from './components/Scroll';
 import { Welcome } from './Slides';

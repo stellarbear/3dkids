@@ -21,6 +21,7 @@ export const PlayButton: React.FC<IProps> = (props) => {
             borderRadius: "50%",
             position: "relative",
             cursor: "pointer",
+            marginBottom: -50
         }}
             onClick={() => call(<YouTubeDialog src={"https://www.youtube.com/embed/2GoexbWjJys"} />)}
         >

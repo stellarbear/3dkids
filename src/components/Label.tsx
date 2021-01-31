@@ -1,8 +1,12 @@
 import * as React from 'react';
 import './Label.css'
 
-export const Label: React.FC = ({ children }) => (
-    <div className="content__label">
+interface IProps {
+    style?: React.CSSProperties
+}
+
+export const Label: React.FC<IProps> = ({ children, style = {} }) => (
+    <div className="content__label" style={style}>
         {children}
     </div>
 )
