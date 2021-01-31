@@ -32,10 +32,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     const onCustom = (index: number) => updateSlide(index);
 
     const renderActionsDefault = (titles: string[]) => (
-        <Row s={16} wrap justify="center" style={{
-            width: "fit-content",
-            overflow: "scroll"
-        }}>
+        <Row s={16} wrap justify="center" fullWidth>
             {
                 titles.map((title, index) => (
                     <Button
