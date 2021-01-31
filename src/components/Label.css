@@ -1,0 +1,12 @@
+
+.content__label {
+    font-family: Practicum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    color: inherit;
+    white-space: pre-wrap;
+    text-align: justify;
+    margin-top: 8px;
+}

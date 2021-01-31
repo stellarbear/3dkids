@@ -1,0 +1,52 @@
+.button-black {
+    min-height: 52px;
+    cursor: pointer;
+    background-color: rgba(239, 239, 239, 0.2);
+    padding: 0px 16px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.button-black:hover {
+    background-color: rgba(255, 255, 255, 0.43)
+}
+
+.button-black-active {
+    border: 2px solid rgba(255, 255, 255, 0.43);
+    background-color: #FF2747;
+}
+
+.button-black-active:hover {
+    background-color: #FF2747;
+}
+
+.button-white {
+    color: #1D2C60;
+    min-height: 52px;
+    padding-top: 4px;
+    cursor: pointer;
+    background-color: rgba(239, 239, 239, 0.2);
+    padding: 0px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.button-white:hover {
+    background-color:#E4E4E4
+}
+
+.button-white-active {
+    color: #FFFFFF;
+    background-color: #FF2747;
+}
+
+.button-white-active:hover {
+    color: #FFFFFF;
+    background-color: #FF2747;
+}

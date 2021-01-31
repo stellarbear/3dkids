@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Slide } from './components';
+import { Modal } from './components/Modal';
+import { Scroll } from './components/Scroll';
+import { Welcome } from './Slides';
+import { Classes } from './Slides/Classes';
+import { Sketches } from './Slides/Sketches';
+import { Study } from './Slides/Study';
+import { Workshop } from './Slides/Workshop';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App: React.FC = () => {
+
+	return (
+		<Modal>
+			<Scroll>
+				{[
+					["О нас", <Welcome />],
+					["Курсы", <Study />],
+					["Об обучении", <Classes />],
+					["Проекты", <Sketches />],
+					["Мастерская", <Workshop />],
+				]}
+			</Scroll>
+		</Modal>
+	)
 }
-
-export default App;

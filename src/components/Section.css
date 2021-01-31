@@ -1,0 +1,9 @@
+.content__section {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(79, 121, 228, 0) 0.01%, rgba(6, 25, 48, 0.88) 0.02%, rgba(25, 51, 100, 0.33) 6.25%, rgba(12, 35, 63, 0.77) 36.46%, #021531 100%);
+}
