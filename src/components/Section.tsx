@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const Section: React.FC<IProps> = ({ children, top = 60 }) => (
-    <div className="content__section">
+    <div className="conten-section">
         {children}
     </div>
 )

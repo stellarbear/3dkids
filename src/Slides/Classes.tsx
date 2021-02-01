@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Video } from '../components/Video';
 import { Title } from '../components/Title';
 import { Label } from '../components/Label';
@@ -7,6 +7,14 @@ import { Container } from '../components/Container';
 import { PlayButton } from '../components/PlayButton';
 import { Section } from '../components/Section';
 
+const content = [
+`   Наши занятия длятся 1 час и проходят в группе до 5 человек. Для каждого ученика подготовлен персональный графический планшет, на котором он обучается работе с 3D-редакторами. 
+
+Чтобы процесс обучения был максимально интересным, мы разработали десятки игровых миров, погружаясь в историю которых дети выполняют уникальные проекты!
+
+По завершении каждого проекта дети не только приобретают актуальные знания и навыки, но и разрабатывают собственные изделия, которые после отправки на произодство станут для них отличным напоминанием об изученном материале.`
+];
+
 export const Classes: React.FC = () => (
     <div style={{ color: "white" }}>
         <Video src="video1" fullScreen />
@@ -14,19 +22,16 @@ export const Classes: React.FC = () => (
             <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />
-            <Container size="sm">
-                <Col align="center" style={{ position: "relative" }}>
+            <Container size="xs">
+                <Col align="center" style={{ position: "relative" }} 
+                    s={8} m={8}>
                     <Title>
                         Как проходят
                         <br />
                         наши занятия
                     </Title>
                     <Label>
-                        <p>&emsp;&emsp;Каждое занятие длится 1 час и построено таким образом, чтобы дети смогли на практике познакомиться с передовыми 3D-технологиями.</p>
-
-                        <p>&emsp;&emsp;Так же мы стремились сделать процесс обучения максимально интересным, поэтому разработали десятки игровых миров, погружаясь в историю которых дети выполняют заранее подготовленные проекты!</p>
-
-                        <p>&emsp;&emsp;По завершению каждого проекта наши ученики преобретают не только актуальные знания и полезные навыки, но и получают собственные изделия, которые в дальнейшем будут напоминать им о достигнутом успехе.</p>
+                        {content}
                     </Label>
                 </Col>
             </Container>

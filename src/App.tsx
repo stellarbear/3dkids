@@ -8,7 +8,7 @@ import { Study } from './Slides/Study';
 import { Workshop } from './Slides/Workshop';
 
 export const App: React.FC = () => {
-
+	
 	return (
 		<Modal>
 			<Scroll>

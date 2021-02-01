@@ -8,10 +8,13 @@ interface IProps {
     titles?: string[]
     onChange?: (index: number) => void
     arrows?: boolean
+
+    buttonStyle?: React.CSSProperties;
 }
 
 export const Carousel: React.FC<IProps> = (props) => {
     const {
+        buttonStyle = {},
         onChange = () => { },
         arrows = false,
         titles,
@@ -39,6 +42,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                         black
                         asSubTitle
                         key={index}
+                        style={buttonStyle}
                         active={index === slide}
                         onClick={() => onCustom(index)}>{title}</Button>
                 ))
@@ -47,7 +51,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     );
 
     const renderActionsWithArrows = (titles: string[]) => (
-        <>
+        <div style={{ position: "relative" }}>
             <Button black asSubTitle onClick={() => {
                 onLeft();
                 const left = slide > 0 ? slide - 1 : slide;
@@ -57,7 +61,9 @@ export const Carousel: React.FC<IProps> = (props) => {
                 const delta = offset - (parent - current) / 2
                 actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
             }} style={{
-                position: "absolute"
+                position: "absolute",
+                top: "50%",
+                transform: "translateY(-50%)"
             }}>
                 {'<'}
             </Button>
@@ -81,6 +87,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                             <Button
                                 black
                                 asSubTitle
+                                style={buttonStyle}
                                 active={index === slide}
                                 onClick={() => {
                                     onCustom(index);
@@ -105,10 +112,12 @@ export const Carousel: React.FC<IProps> = (props) => {
             }} style={{
                 position: "absolute",
                 right: 0,
+                top: "50%",
+                transform: "translateY(-50%)"
             }}>
                 {'>'}
             </Button>
-        </>
+        </div>
     );
 
     const renderSlides = () => (
@@ -121,7 +130,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     );
 
     return (
-        <Col s={16} style={{ position: 'relative' }}>
+        <Col s={16} style={{ position: 'relative', overflow:'hidden' }}>
             {titles && (arrows
                 ? renderActionsWithArrows(titles)
                 : renderActionsDefault(titles))}

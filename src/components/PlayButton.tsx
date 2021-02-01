@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useModal } from './Modal';
 import { YouTubeDialog } from './YoutubeDialog';
+import './PlayButton.css'
 
 interface IProps {
     link: string
@@ -12,7 +13,7 @@ export const PlayButton: React.FC<IProps> = (props) => {
     const { call } = useModal();
 
     return (
-        <div style={{
+        <div className="play-button" style={{
             ...style,
             width: 80,
             height: 80,
@@ -26,8 +27,8 @@ export const PlayButton: React.FC<IProps> = (props) => {
             onClick={() => call(<YouTubeDialog src={"https://www.youtube.com/embed/2GoexbWjJys"} />)}
         >
             <img style={{
-                top: 10,
-                left: 10,
+                top: 11,
+                left: 11,
                 position: "absolute"
             }} src="images/play.png" alt="" />
         </div>

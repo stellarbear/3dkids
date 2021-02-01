@@ -1,9 +1,9 @@
-.content__subtitle {
+.content-subtitle {
     font-family: Borsok;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 16px;
     color: inherit;
     text-align: center;
 }
