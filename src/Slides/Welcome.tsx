@@ -13,16 +13,16 @@ const content = [
     `   Наша команда — это люди, объединенные одной общей идеей:`,
     `Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности.`,
     `   Для этого мы разработали курсы, проходящие с использованием передовых 3D-технологий и игровых приложений, которые позволят ребенку с головой погрузиться в процесс обучения и познакомят его с такими направлениями как:`,
-    `3D-моделированиЕ, 3D-печать, кинопроизводство, VR-разработка.`
+    `3D-моделирование, 3D-печать, кинопроизводство, VR-разработка и основы программирования.`
 ];
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
         <Video src="video1" fullScreen />
         <Section>
-            <PlayButton link="test" style={{
+            {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
-            }} />
+            }} />}
             <Container size="xs" style={{ marginBottom: 25 }}>
                 <Col s={8} m={8} align="center" style={{ position: "relative" }}>
                     <Title>
@@ -41,7 +41,7 @@ export const Welcome: React.FC = () => (
                             position: "absolute",
                             top: "-50%",
                             right: "90%",
-                        }} src="images/intro_knight.png" alt="" />
+                        }} src="intro_knight.png" alt="" />
                     </Hidden>
                 </Col>
             </Container>

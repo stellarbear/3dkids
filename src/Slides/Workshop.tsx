@@ -18,11 +18,11 @@ const content =
 
 export const Workshop: React.FC = () => (
     <div style={{ color: "white" }}>
-        <Video src="video1" fullScreen />
+        <Video src="video3" fullScreen />
         <Section>
-            <PlayButton link="test" style={{
+            {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
-            }} />
+            }} />}
             <Container size="xs">
                 <Col align="center" style={{ position: "relative" }} 
                     s={8} m={8}>
