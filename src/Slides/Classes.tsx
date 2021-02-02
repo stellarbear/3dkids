@@ -8,7 +8,7 @@ import { PlayButton } from '../components/PlayButton';
 import { Section } from '../components/Section';
 
 const content = [
-`   Наши занятия длятся 1 час и проходят в группе до 5 человек. Для каждого ученика подготовлен персональный графический планшет, на котором он обучается работе с 3D-редакторами. 
+    `   Наши занятия длятся 1 час и проходят в группе до 5 человек. Для каждого ученика подготовлен персональный графический планшет, на котором он обучается работе с 3D-редакторами. 
 
 Чтобы процесс обучения был максимально интересным, мы разработали десятки игровых миров, погружаясь в историю которых дети выполняют уникальные проекты!
 
@@ -17,13 +17,13 @@ const content = [
 
 export const Classes: React.FC = () => (
     <div style={{ color: "white" }}>
-        <Video src="video1" fullScreen />
+        <Video src="video2" fullScreen />
         <Section>
-            <PlayButton link="test" style={{
+            {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
-            }} />
+            }} />}
             <Container size="xs">
-                <Col align="center" style={{ position: "relative" }} 
+                <Col align="center" style={{ position: "relative" }}
                     s={8} m={8}>
                     <Title>
                         Как проходят

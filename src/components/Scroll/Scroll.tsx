@@ -26,7 +26,7 @@ export const Scroll: React.FC<IProps> = (props) => {
             const src = window.scrollY;
 
             for (let i = 1; i < offsets.length; i++) {
-                if (src < offsets[i]) {
+                if (src < offsets[i] + 0 * (window.innerHeight / 3)) {
                     setActive(i - 1);
                     return;
                 }
