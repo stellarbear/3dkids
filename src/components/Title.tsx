@@ -1,8 +1,15 @@
 import * as React from 'react';
 import './Title.css'
 
-export const Title: React.FC = ({ children }) => (
-    <div className="content-title">
+interface IProps {
+    alt?: boolean
+    style?: React.CSSProperties
+}
+
+export const Title: React.FC<IProps> = ({ children, style = {}, alt = false }) => (
+    <div style={style} className={alt 
+        ? "content-title content-title-alt"
+        : "content-title"}>
         {children}
     </div>
 )

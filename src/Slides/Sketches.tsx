@@ -6,6 +6,7 @@ import { Col } from '../components/Flex';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Carousel } from '../components/Carousel';
+import { Divider } from '../components/Divider';
 
 const content = [
 [
@@ -46,27 +47,23 @@ export const Sketches: React.FC = () => {
     return (
         <div style={{ color: "white" }}>
             <Image src={`sketch-${content[index][1]}`} alt="sketch image" fullScreen />
-            <Section top={40}>
-                <Container size="sm" style={{ overflow: "hidden" }}>
+            <Section>
+                <Container size="md" style={{ overflow: "hidden" }}>
                     <Col s={8} m={8}>
                         <Title>
-                            Каждый проект
-                            <br />
-                            это целое приключение...
-                    </Title>
+                            Примеры проектов для наших учеников!
+                        </Title>
+                        <Divider style={{marginBottom: 16}}/>
                         <Carousel
-                            arrows
+                            arrows infinite
                             onChange={setIndex}
-                            buttonStyle={{maxWidth: 156, minHeight: 55}}
+                            buttonStyle={{maxWidth: 128, minHeight: 55}}
                             titles={content.map(c => c[0])}
                         >
                             {content.map(([title, , text1, text2], index) => (
-                                <Col m={8} key={index}>
+                                <Col m={8} s={16} key={index}>
                                     <Label>{text1}</Label>
-                                    <Label style={{
-                                        marginTop: 12,
-                                        textTransform: "uppercase", 
-                                        textDecoration: "underline"}}>{title}</Label>
+                                    <Divider/>
                                     <Label>{text2}</Label>
                                 </Col>
                             ))}

@@ -1,0 +1,31 @@
+.test {
+    border-left: 2px solid #8D8D8D;
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: -3%;
+    bottom: -3%;
+    overflow: hidden;
+}
+.test:after,
+.test:before {
+    position: absolute;
+    content: '';
+    width: calc(100% - 2px);
+    left: 0px;
+    z-index: 5;
+}
+.test:before {
+    height: 20%;
+    top: 0px;
+    border: 2px solid #8D8D8D;
+    border-width: 2px 3px 0px 0px;
+    transform: skew(45deg);
+    transform-origin: right bottom;
+}
+.test:after {
+    height: calc(80% - 4px);
+    bottom: 0px;
+    border: 2px solid #8D8D8D;
+    border-width: 0px 2px 2px 0px;
+}

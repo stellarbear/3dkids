@@ -8,40 +8,46 @@ import { PlayButton } from '../components/PlayButton';
 import { Section } from '../components/Section';
 import { Hidden } from '../components/Hidden';
 import { Image } from '../components/Image';
+import { ClassPool } from '../components/ClassPool';
 
 const content = [
-    `   Наша команда — это люди, объединенные одной общей идеей:`,
-    `Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности.`,
+    `   3Dkids — это команда людей, объединенных одной общей идеей:`,
+    `   “Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности”.`,
     `   Для этого мы разработали курсы, проходящие с использованием передовых 3D-технологий и игровых приложений, которые позволят ребенку с головой погрузиться в процесс обучения и познакомят его с такими направлениями как:`,
-    `3D-моделирование, 3D-печать, кинопроизводство, VR-разработка и основы программирования.`
+    `3D-моделирование, 3D-печать, кинопроизводство, программирование.`
 ];
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
         <Video src="video1" fullScreen />
-        <Section>
+        <Section alt>
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
-            <Container size="xs" style={{ marginBottom: 25 }}>
+            <Container size="md">
                 <Col s={8} m={8} align="center" style={{ position: "relative" }}>
-                    <Title>
+                    <Title alt style={{width: "90%"}}>
                         Добро пожаловать
                         <br />
                         в сказочный мир 3D!
                     </Title>
-                    <Col s={8}>
-                        <Label>{content[0]}</Label>
-                        <Label style={{ textDecoration: "underline" }}>{content[1]}</Label>
-                        <Label>{content[2]}</Label>
-                        <Label>{content[3]}</Label>
-                    </Col>
+                    <ClassPool type="text-plane">
+                        <Col s={16} m={8}
+                            style={{
+                                padding: "8px 10%",
+                            }}
+                        >
+                            <Label>{content[0]}</Label>
+                            <Label>{content[1]}</Label>
+                            <Label>{content[2]}</Label>
+                            <Label>{content[3]}</Label>
+                        </Col>
+                    </ClassPool>
                     <Hidden less="sm">
                         <Image style={{
                             position: "absolute",
-                            top: "-50%",
-                            right: "90%",
-                        }} src="intro_knight.png" alt="" />
+                            right: "90%", top: "10%"
+                        }} src="intro_knight" alt="" />
                     </Hidden>
                 </Col>
             </Container>

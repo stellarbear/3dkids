@@ -1,9 +1,17 @@
-.conten-section {
+.content-section {
     position: absolute;
     left: 0;
     bottom: 0;
     right: 0;
     border-top: 2px solid #FFFFFF;
     border-bottom: 2px solid #FFFFFF;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(79, 121, 228, 0) 0.01%, rgba(6, 25, 48, 0.88) 0.02%, rgba(11, 52, 74, 0.77) 10.94%, #021531 100%);
+}
+
+.content-section-default {
+    background: linear-gradient(180deg, rgba(6, 25, 48, 0.88) 0.02%, rgba(8, 34, 49, 0.85) 10.94%, #021531 100%);
+}
+.content-section-alternative {
+    background: url('assets/pattern.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+    background-size: contain;
+    background-blend-mode: overlay;
 }

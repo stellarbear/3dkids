@@ -1,9 +1,12 @@
 .content-title {
-    font-family: Borsok;
+    font-family: Bebas;
     font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 24px;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 50px;
     color: inherit;
-    text-align: center;
+}
+
+.content-title-alt {
+    color: #1D3060
 }

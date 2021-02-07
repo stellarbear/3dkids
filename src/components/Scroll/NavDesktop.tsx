@@ -16,9 +16,9 @@ export const NavDesktop: React.FC<IProps> = (props) => {
         <div style={{
             zIndex: 10,
             position: "fixed",
-            top: 20,
+            top: 0,
             width: "100vw",
-            backgroundColor: "#FFFFFF"
+            backgroundColor: "#000000"
         }}>
             <Container size="lg" thin>
                 <Row justify="flex-end">

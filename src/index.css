@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Borsok';
-    src: local('Borsok'), url(./fonts/Borsok.woff) format('woff');
+    font-family: 'Noah';
+    src: local('Noah'), url(./fonts/Noah.woff) format('woff');
 }
 @font-face {
-    font-family: 'Practicum';
-    src: local('Practicum'), url(./fonts/Practicum.woff) format('woff');
+    font-family: 'Bebas';
+    src: local('Bebas'), url(./fonts/Bebas.woff) format('woff');
 }

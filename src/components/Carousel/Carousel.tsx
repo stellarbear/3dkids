@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import * as React from "react";
 import { Button } from "../Button";
 import { Col, Row } from "../Flex";
@@ -8,15 +9,24 @@ interface IProps {
     titles?: string[]
     onChange?: (index: number) => void
     arrows?: boolean
+    infinite?: boolean
 
     buttonStyle?: React.CSSProperties;
 }
+
+const iconStye: React.CSSProperties = ({
+    transform: "translateY(-50%)",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    padding: 0, width: 40,
+})
 
 export const Carousel: React.FC<IProps> = (props) => {
     const {
         buttonStyle = {},
         onChange = () => { },
         arrows = false,
+        infinite = false,
         titles,
         children,
     } = props;
@@ -30,8 +40,8 @@ export const Carousel: React.FC<IProps> = (props) => {
         setSlide(index);
     }
 
-    const onRight = () => updateSlide(slide < children.length - 1 ? slide + 1 : slide);
-    const onLeft = () => updateSlide(slide > 0 ? slide - 1 : slide);
+    const onRight = () => updateSlide(slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide));
+    const onLeft = () => updateSlide(slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide));
     const onCustom = (index: number) => updateSlide(index);
 
     const renderActionsDefault = (titles: string[]) => (
@@ -54,7 +64,7 @@ export const Carousel: React.FC<IProps> = (props) => {
         <div style={{ position: "relative" }}>
             <Button black asSubTitle onClick={() => {
                 onLeft();
-                const left = slide > 0 ? slide - 1 : slide;
+                const left = slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide);
                 const offset = itemsRef.current[left]?.offsetLeft ?? 0
                 const parent = (actionRef.current?.clientWidth ?? 0);
                 const current = (itemsRef.current[left]?.clientWidth ?? 0);
@@ -63,10 +73,9 @@ export const Carousel: React.FC<IProps> = (props) => {
             }} style={{
                 position: "absolute",
                 top: "50%",
-                transform: "translateY(-50%)"
-            }}>
-                {'<'}
-            </Button>
+                backgroundImage: "url('images/left.svg')",
+                ...iconStye,
+            }}/>
             <div
                 ref={actionRef}
                 style={{
@@ -75,7 +84,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                     gridGap: 16,
                     gridAutoFlow: "column",
                     gridAutoColumns: "minmax(max-content,1fr)",
-                    overflowX: "auto",
+                    overflowX: "hidden",
                     margin: "0px 60px",
                     position: 'relative'
                 }}>
@@ -103,7 +112,7 @@ export const Carousel: React.FC<IProps> = (props) => {
             </div>
             <Button black asSubTitle onClick={() => {
                 onRight();
-                const right = slide < children.length - 1 ? slide + 1 : slide;
+                const right = slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide);
                 const offset = itemsRef.current[right]?.offsetLeft ?? 0
                 const parent = (actionRef.current?.clientWidth ?? 0);
                 const current = (itemsRef.current[right]?.clientWidth ?? 0);
@@ -113,10 +122,9 @@ export const Carousel: React.FC<IProps> = (props) => {
                 position: "absolute",
                 right: 0,
                 top: "50%",
-                transform: "translateY(-50%)"
-            }}>
-                {'>'}
-            </Button>
+                backgroundImage: "url('images/right.svg')",
+                ...iconStye,
+            }}/>
         </div>
     );
 
