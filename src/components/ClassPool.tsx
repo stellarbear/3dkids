@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const ClassPool: React.FC<IProps> = ({type, children}) => {
-    const classes = Array.from(type).map(t => t).join("")
+    const classes = Array.from(type).map(t => t).join(" ")
     return (
        <div className={classes}>
            {children}

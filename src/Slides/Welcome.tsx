@@ -25,26 +25,21 @@ export const Welcome: React.FC = () => (
                 transform: "translate(0, -50%)"
             }} />}
             <Container size="md">
-                <Col s={8} m={8} align="center" style={{ position: "relative" }}>
-                    <Title alt style={{width: "90%"}}>
+                <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
+                    <Title alt style={{maxHeight: 100}}>
                         Добро пожаловать
                         <br />
                         в сказочный мир 3D!
                     </Title>
-                    <ClassPool type="text-plane">
-                        <Col s={16} m={8}
-                            style={{
-                                padding: "16px 10%",
-                                marginRight: "-6%"
-                            }}
-                        >
+                    <ClassPool type={["text-plane", "text-plane-1"]}>
+                        <Col s={16} m={8}>
                             <Label>{content[0]}</Label>
                             <Label>{content[1]}</Label>
                             <Label>{content[2]}</Label>
                             <Label>{content[3]}</Label>
                         </Col>
                     </ClassPool>
-                    <Hidden less="sm">
+                    <Hidden less="lg">
                         <Image style={{
                             position: "absolute",
                             right: "88%", top: "18%"

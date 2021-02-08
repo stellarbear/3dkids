@@ -3,8 +3,19 @@
     font-family: Noah;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 24px;
     color: inherit;
     white-space: pre-wrap;
+}
+
+@media screen and (min-width: 769px) {
+    .content-title {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-title {
+        font-size: 15px;
+        line-height: 15px;
+    }
 }

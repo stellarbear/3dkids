@@ -46,14 +46,18 @@ export const Carousel: React.FC<IProps> = (props) => {
     const onCustom = (index: number) => updateSlide(index);
 
     const renderActionsDefault = (titles: string[]) => (
-        <Row s={16} wrap justify="center" fullWidth>
+        <Row wrap justify="center" fullWidth>
             {
                 titles.map((title, index) => (
                     <Button
                         black
                         asSubTitle
                         key={index}
-                        style={buttonStyle}
+                        style={{
+                            margin: 4,
+                            minWidth: 140,
+                            ...buttonStyle
+                        }}
                         active={index === slide}
                         onClick={() => onCustom(index)}>{title}</Button>
                 ))
@@ -139,7 +143,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     );
 
     return (
-        <Col s={16} style={{ position: 'relative', overflow:'hidden' }}>
+        <Col s={8} style={{ position: 'relative', overflow:'hidden' }}>
             {titles && (arrows
                 ? renderActionsWithArrows(titles)
                 : renderActionsDefault(titles))}

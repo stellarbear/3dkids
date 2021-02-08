@@ -52,6 +52,7 @@ export const NavMobile: React.FC<IProps> = (props) => {
                                 asSubTitle
                                 key={index}
                                 active={index === active}
+                                style={{width: 120}}
                                 onClick={() => {
                                     onClick(index)
                                     setOpened(false)

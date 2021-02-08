@@ -13,22 +13,17 @@ export const App: React.FC = () => {
 	
 	return (
 		<>
-			<Hidden less="lg">
-				<Modal>
-					<Scroll>
-						{[
-							["О нас", <Welcome />],
-							["Курсы", <Study />],
-							["Об обучении", <Classes />],
-							["Проекты", <Sketches />],
-							["Мастерская", <Workshop />],
-						]}
-					</Scroll>
-				</Modal>
-			</Hidden>
-			<Hidden more="lg">
-				<Mobile/>
-			</Hidden>
+			<Modal>
+				<Scroll>
+					{[
+						["О нас", <Welcome />],
+						["Курсы", <Study />],
+						["Об обучении", <Classes />],
+						["Проекты", <Sketches />],
+						["Мастерская", <Workshop />],
+					]}
+				</Scroll>
+			</Modal>
 		</>
 	)
 }

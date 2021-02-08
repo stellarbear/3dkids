@@ -14,7 +14,7 @@ export const NavDesktop: React.FC<IProps> = (props) => {
 
     return (
         <div style={{
-            zIndex: 10,
+            zIndex: 20,
             position: "fixed",
             top: 0,
             width: "100vw",

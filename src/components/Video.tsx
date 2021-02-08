@@ -37,15 +37,23 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false }) => {
                 style={{
                     height,
                     width: "100%",
+                    zIndex: 5,
                     position: "relative"
                 }}>
                 <div 
                     style={{
                         position: "absolute",
-                        top: "18%",
-                        right: "10%",
-                        width: "80%",
-                        height: "75%",
+                        ...((size.width < 768) ? {
+                            top: "5%",
+                            right: "5%",
+                            width: "90%",
+                            height: "90%",
+                        } : {
+                            top: "18%",
+                            right: "10%",
+                            width: "80%",
+                            height: "76%",
+                        })
                     }}>
                         <video
                             style={fullScreen ? {
