@@ -8,13 +8,21 @@ interface IProps {
 }
 
 export const Image: React.FC<IProps> = ({ src, alt, style = {}, fullScreen = false }) => (
-    <img
-        style={fullScreen ? {
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            ...style,
-        }: style}
-        alt={alt} src={`images/${src}.png`} />
+    <div>
+        <picture>
+            <source srcSet={`images/${src}.webp`} type="image/webp"/>
+            <img style={
+                fullScreen ? {
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    ...style,
+                }: style
+            }
+            height="inherit" src={`images/${src}.png`} alt={alt}/>
+        </picture>
+    </div>
 )
+
+//  <source srcSet={`images/${src}.webp`} type="image/webp"/>

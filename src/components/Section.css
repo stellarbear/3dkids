@@ -3,15 +3,28 @@
     left: 0;
     bottom: 0;
     right: 0;
-    border-top: 2px solid #FFFFFF;
-    border-bottom: 2px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 .content-section-default {
     background: linear-gradient(180deg, rgba(6, 25, 48, 0.88) 0.02%, rgba(8, 34, 49, 0.85) 10.94%, #021531 100%);
 }
-.content-section-alternative {
-    background: url('assets/pattern.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+
+.content-section-alternative-1 {
+    background: url('assets/pattern1.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+    background-size: contain;
+    background-blend-mode: overlay;
+}
+
+.content-section-alternative-2 {
+    background: url('assets/pattern2.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+    background-size: contain;
+    background-blend-mode: overlay;
+}
+
+.content-section-alternative-3 {
+    background: url('assets/pattern3.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
     background-size: contain;
     background-blend-mode: overlay;
 }

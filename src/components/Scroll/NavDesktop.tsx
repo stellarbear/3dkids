@@ -20,7 +20,7 @@ export const NavDesktop: React.FC<IProps> = (props) => {
             width: "100vw",
             backgroundColor: "#000000"
         }}>
-            <Container size="lg" thin>
+            <Container size="xl" thin>
                 <Row justify="flex-end">
                     {
                         titles.map((text, index) => (
@@ -28,6 +28,7 @@ export const NavDesktop: React.FC<IProps> = (props) => {
                                 white
                                 asSubTitle
                                 key={index}
+                                style={{minWidth: 160}}
                                 active={index === active}
                                 onClick={() => onClick(index)}>
                                 {text}

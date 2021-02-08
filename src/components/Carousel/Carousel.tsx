@@ -1,10 +1,10 @@
-import { url } from "inspector";
 import * as React from "react";
 import { Button } from "../Button";
 import { Col, Row } from "../Flex";
 import { Slides } from "./Slides";
 
 interface IProps {
+    top?: React.ReactNode;
     children: React.ReactNode[];
     titles?: string[]
     onChange?: (index: number) => void
@@ -23,6 +23,7 @@ const iconStye: React.CSSProperties = ({
 
 export const Carousel: React.FC<IProps> = (props) => {
     const {
+        top = null,
         buttonStyle = {},
         onChange = () => { },
         arrows = false,
@@ -62,7 +63,7 @@ export const Carousel: React.FC<IProps> = (props) => {
 
     const renderActionsWithArrows = (titles: string[]) => (
         <div style={{ position: "relative" }}>
-            <Button black asSubTitle onClick={() => {
+            <Button black onClick={() => {
                 onLeft();
                 const left = slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide);
                 const offset = itemsRef.current[left]?.offsetLeft ?? 0
@@ -110,7 +111,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                     ))
                 }
             </div>
-            <Button black asSubTitle onClick={() => {
+            <Button black onClick={() => {
                 onRight();
                 const right = slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide);
                 const offset = itemsRef.current[right]?.offsetLeft ?? 0
@@ -142,6 +143,7 @@ export const Carousel: React.FC<IProps> = (props) => {
             {titles && (arrows
                 ? renderActionsWithArrows(titles)
                 : renderActionsDefault(titles))}
+            {top}
             {renderSlides()}
         </Col>
     );

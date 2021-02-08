@@ -18,15 +18,10 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false }) => {
             const bottomHeight = ref.current.parentElement?.lastElementChild?.clientHeight ?? 0;
             setHeight(windowHeight - bottomHeight);
         }
-    }, [size, ref])
+    }, [size.width, size.height, ref])
     
     return (
-        <div ref={ref}
-            style={{
-                height,
-                width: "100%",
-                position: "relative"
-            }}>
+        <>
             <video
                 style={fullScreen ? {
                     position: "absolute",
@@ -38,28 +33,35 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false }) => {
                 <source src={`videos/${src}_blur.webm`} type="video/webm" />
                 <source src={`videos/${src}_blur.mp4`} type="video/mp4" />
             </video>
-            <div 
+            <div ref={ref}
                 style={{
-                    position: "absolute",
-                    top: "18%",
-                    right: "10%",
-                    width: "80%",
-                    height: "75%",
+                    height,
+                    width: "100%",
+                    position: "relative"
                 }}>
-                    <video
-                        style={fullScreen ? {
-                            position: "absolute",
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }: {}}
-                        loop={true} muted={true} autoPlay={true} preload="metadata">
-                        <source src={`videos/${src}.webm`} type="video/webm" />
-                        <source src={`videos/${src}.mp4`} type="video/mp4" />
-                    </video>
-                    <div className="test"/>
+                <div 
+                    style={{
+                        position: "absolute",
+                        top: "18%",
+                        right: "10%",
+                        width: "80%",
+                        height: "75%",
+                    }}>
+                        <video
+                            style={fullScreen ? {
+                                position: "absolute",
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                            }: {}}
+                            loop={true} muted={true} autoPlay={true} preload="metadata">
+                            <source src={`videos/${src}.webm`} type="video/webm" />
+                            <source src={`videos/${src}.mp4`} type="video/mp4" />
+                        </video>
+                        <div className="test"/>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

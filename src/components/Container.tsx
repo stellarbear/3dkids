@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-type Size = "xs" | "sm" | "md" | "lg"
+type Size = "xs" | "sm" | "md" | "lg" | "xl"
 
 interface IProps {
     style?: React.CSSProperties
@@ -18,6 +18,8 @@ const pick = (size: Size) => {
             return 992;
         case "lg":
             return 1200;
+        case "xl":
+            return 1700;
     }
 }
 

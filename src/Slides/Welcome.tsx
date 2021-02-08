@@ -12,15 +12,15 @@ import { ClassPool } from '../components/ClassPool';
 
 const content = [
     `   3Dkids — это команда людей, объединенных одной общей идеей:`,
-    `   “Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности”.`,
+    `    “Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности”.`,
     `   Для этого мы разработали курсы, проходящие с использованием передовых 3D-технологий и игровых приложений, которые позволят ребенку с головой погрузиться в процесс обучения и познакомят его с такими направлениями как:`,
-    `3D-моделирование, 3D-печать, кинопроизводство, программирование.`
+    `3D-моделированиЕ, 3D-печать, кинопроизводство, программирование.`
 ];
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
         <Video src="video1" fullScreen />
-        <Section alt>
+        <Section alt={1}>
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
@@ -34,7 +34,8 @@ export const Welcome: React.FC = () => (
                     <ClassPool type="text-plane">
                         <Col s={16} m={8}
                             style={{
-                                padding: "8px 10%",
+                                padding: "16px 10%",
+                                marginRight: "-6%"
                             }}
                         >
                             <Label>{content[0]}</Label>
@@ -46,7 +47,7 @@ export const Welcome: React.FC = () => (
                     <Hidden less="sm">
                         <Image style={{
                             position: "absolute",
-                            right: "90%", top: "10%"
+                            right: "88%", top: "18%"
                         }} src="intro_knight" alt="" />
                     </Hidden>
                 </Col>
