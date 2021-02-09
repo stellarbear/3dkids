@@ -4,10 +4,11 @@ import './Video.css'
 
 interface IProps {
     src: string
+    logo?: boolean
     fullScreen?: boolean
 }
 
-export const Video: React.FC<IProps> = ({ src, fullScreen = false }) => {
+export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false }) => {
     const [size] = useWindowSize();
     const [height, setHeight] = React.useState(size.height);
     const ref = React.useRef<(HTMLDivElement | null)>(null);
@@ -37,9 +38,24 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false }) => {
                 style={{
                     height,
                     width: "100%",
-                    zIndex: 5,
+                    zIndex: 3,
                     position: "relative"
                 }}>
+                {logo && (
+                    <img 
+                        src="images/logo-big.png"
+                        style={{
+                            position: "absolute",
+                            zIndex: 4,
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto",
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                        }}
+                    />
+                )}
                 <div 
                     style={{
                         position: "absolute",

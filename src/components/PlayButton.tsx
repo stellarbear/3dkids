@@ -20,11 +20,13 @@ export const PlayButton: React.FC<IProps> = (props) => {
             margin: "auto",
             backgroundColor: "#FF2747",
             borderRadius: "50%",
-            position: "relative",
+            position: "absolute",
             cursor: "pointer",
-            marginBottom: -50
+            zIndex: 4,
+            top: "-13%",
+            left: 0, right: 0,
         }}
-            onClick={() => call(<YouTubeDialog src={"https://www.youtube.com/embed/2GoexbWjJys"} />)}
+            onClick={() => call(<YouTubeDialog src={link} />)}
         >
             <img style={{
                 top: 11,

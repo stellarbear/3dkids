@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button } from '../Button';
 import { Container } from '../Container';
 import { Row } from '../Flex';
+import { Hidden } from '../Hidden';
 
 interface IProps {
     titles: string[]
@@ -21,20 +22,27 @@ export const NavDesktop: React.FC<IProps> = (props) => {
             backgroundColor: "#000000"
         }}>
             <Container size="xl" thin>
-                <Row justify="flex-end">
-                    {
-                        titles.map((text, index) => (
-                            <Button
-                                white
-                                asSubTitle
-                                key={index}
-                                style={{minWidth: 160}}
-                                active={index === active}
-                                onClick={() => onClick(index)}>
-                                {text}
-                            </Button>
-                        ))
-                    }
+                <Row justify="space-between" align="center">
+                    <Hidden less="lg">
+                        <img
+                            style={{margin: "0px 8px"}}
+                            src="images/logo.png" />
+                    </Hidden>
+                    <Row justify="flex-end">
+                        {
+                            titles.map((text, index) => (
+                                <Button
+                                    white
+                                    asSubTitle
+                                    key={index}
+                                    style={{minWidth: 160}}
+                                    active={index === active}
+                                    onClick={() => onClick(index)}>
+                                    {text}
+                                </Button>
+                            ))
+                        }
+                    </Row>
                 </Row>
             </Container>
         </div>

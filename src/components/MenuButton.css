@@ -16,7 +16,6 @@
     background-color: #fff;
     position: absolute;
     left: 0;
-    border-radius: 50%;
     transition: all linear 0.2s;
 }
 .menu-button__line--top {

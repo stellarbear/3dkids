@@ -19,11 +19,9 @@ const content = [
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
-        <Video src="video1" fullScreen />
+        <Video src="video1" fullScreen logo/>
         <Section alt={1}>
-            {false && <PlayButton link="test" style={{
-                transform: "translate(0, -50%)"
-            }} />}
+            <PlayButton link="https://www.youtube.com/embed/Xg9r5KHb2DA"/>
             <Container size="md">
                 <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt style={{maxHeight: 100}}>

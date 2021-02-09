@@ -78,7 +78,8 @@ export const Carousel: React.FC<IProps> = (props) => {
             }} style={{
                 position: "absolute",
                 top: "50%",
-                backgroundImage: "url('images/left.svg')",
+                backgroundImage: "url('images/left.png')",
+                backgroundSize: "cover",
                 ...iconStye,
             }}/>
             <div
@@ -127,7 +128,8 @@ export const Carousel: React.FC<IProps> = (props) => {
                 position: "absolute",
                 right: 0,
                 top: "50%",
-                backgroundImage: "url('images/right.svg')",
+                backgroundImage: "url('images/right.png')",
+                backgroundSize: "cover",
                 ...iconStye,
             }}/>
         </div>
