@@ -7,10 +7,11 @@ interface IProps {
     style?: React.CSSProperties;
     onLeft: () => void;
     onRight: () => void;
+    noTouch?: boolean
 }
 
 export const Slides: React.FC<IProps> = (props) => {
-    const {content, slide, onLeft, onRight, style = {}} = props;
+    const {content, slide, onLeft, onRight, noTouch = false, style = {}} = props;
 
     const [touchX, setTouchX] = React.useState(0);
     const [moveX, setMoveX] = React.useState(0);
@@ -29,7 +30,7 @@ export const Slides: React.FC<IProps> = (props) => {
 
     const slideShift = `translateX(${-slide * 100}%)`;
     const touchShift = `translateX(${(moveX ?? 0) - (touchX ?? 0)}px)`;
-    const isTouching = moveX && touchX;
+    const isTouching = !noTouch && moveX && touchX;
 
     return (
         <Row style={{
@@ -50,7 +51,7 @@ export const Slides: React.FC<IProps> = (props) => {
                         }}
                         onTouchStart={(e) => setTouchX(e.touches?.[0]?.clientX ?? 0)}
                         onTouchMove={(e) => setMoveX(e.touches?.[0]?.clientX ?? 0)}
-                        onTouchEnd={() => onMove()}
+                        onTouchEnd={() => !noTouch && onMove()}
                     >
                         {child}
                     </div>

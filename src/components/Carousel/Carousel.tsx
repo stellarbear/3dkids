@@ -135,6 +135,7 @@ export const Carousel: React.FC<IProps> = (props) => {
 
     const renderSlides = () => (
         <Slides
+            noTouch
             slide={slide}
             onLeft={onLeft}
             onRight={onRight}
