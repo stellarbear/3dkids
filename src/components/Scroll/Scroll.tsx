@@ -13,7 +13,7 @@ interface IProps {
 export const Scroll: React.FC<IProps> = (props) => {
     const { children } = props;
     const [prevScrollState, setPrevScrollState] = React.useState(0);
-    const [scrollState, setScrollState, forceSetScrollState] = useDebounce(256, 0);
+    const [scrollState, setScrollState, forceSetScrollState] = useDebounce(48, 0);
     const itemsRef = React.useRef<(HTMLDivElement | null)[]>([]);
     const [active, setActive] = React.useState(0);
 
