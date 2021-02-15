@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { cn } from '../../helpers/cn';
 import { Label } from '../Label';
 import { SubTitle } from '../SubTitle';
 import { Title } from '../Title';
@@ -28,6 +29,7 @@ type IProps = {
     onClick: () => void;
     active?: boolean;
     style?: React.CSSProperties
+    className?: string
 } & (IPropsBlack | IPropsWhite)
 & (IPropsLabel | IPropsTitle | IPropsSubtitle)
 
@@ -54,14 +56,18 @@ const getClass = (props: IProps) => {
 }
 
 export const Button: React.FC<IProps> = (props) => {
-    const { children, active, onClick, style = {} } = props;
+    const { children, active, onClick, style = {}, className } = props;
 
-    const className = getClass(props);
+    const classNameType = getClass(props);
     const content = renderContent(props, children)
 
     return (
         <div style={{...style, userSelect: "none"}}
-         className={active ? `${className} ${className}-active` : `${className}`} onClick={onClick}>
+         className={cn(
+            active && `${classNameType}-active`, 
+            `${classNameType}`,
+            className
+            )} onClick={onClick}>
             {content}
         </div>
     )

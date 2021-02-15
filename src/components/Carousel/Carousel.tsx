@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button } from "../Button";
 import { Col, Row } from "../Flex";
 import { Slides } from "./Slides";
+import './Carousel.css'
 
 interface IProps {
     top?: React.ReactNode;
@@ -75,13 +76,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                 const current = (itemsRef.current[left]?.clientWidth ?? 0);
                 const delta = offset - (parent - current) / 2
                 actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
-            }} style={{
-                position: "absolute",
-                top: "50%",
-                backgroundImage: "url('images/left.png')",
-                backgroundSize: "cover",
-                ...iconStye,
-            }}/>
+            }} className="left-arrow"/>
             <div
                 ref={actionRef}
                 style={{
@@ -124,14 +119,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                 const current = (itemsRef.current[right]?.clientWidth ?? 0);
                 const delta = offset - (parent - current) / 2
                 actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
-            }} style={{
-                position: "absolute",
-                right: 0,
-                top: "50%",
-                backgroundImage: "url('images/right.png')",
-                backgroundSize: "cover",
-                ...iconStye,
-            }}/>
+            }} className="right-arrow"/>
         </div>
     );
 

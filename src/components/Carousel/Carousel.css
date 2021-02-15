@@ -1,0 +1,50 @@
+.left-arrow {
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    background-image: url('/src/assets/left.png');
+    animation: shake-right 4s infinite;
+    background-size: cover;
+}
+
+.right-arrow {
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-image: url('/src/assets/right.png');
+    animation: shake-left 4s infinite;
+    background-size: cover;
+}
+
+@keyframes shake-right {
+    0% {
+        transform: translate(0%, -50%);
+    }
+    50% {
+        transform: translate(4px, -50%);
+    }
+    100% {
+        transform: translate(0%, -50%);
+    }
+}
+
+@keyframes shake-left {
+    0% {
+        transform: translate(0%, -50%);
+    }
+    50% {
+        transform: translate(-4px, -50%);
+    }
+    100% {
+        transform: translate(0%, -50%);
+    }
+}

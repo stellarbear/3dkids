@@ -27,7 +27,7 @@ export const Classes: React.FC = () => (
                 <Col align="flex-start" style={{ position: "relative" }}
                     s={8} m={8}>
                     <Title alt style={{maxHeight: 80}}>
-                        Как проходят наши занятия?
+                        Как проходят наши&nbsp;занятия?
                     </Title>
                     <ClassPool type={["text-plane", "text-plane-2"]}>
                         <Col s={16} m={8}>

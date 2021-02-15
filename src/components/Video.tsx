@@ -50,9 +50,10 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false 
                             top: 0,
                             left: 0,
                             right: 0,
+                            bottom: 0,
                             margin: "auto",
                             maxWidth: "100%",
-                            maxHeight: "100%",
+                            maxHeight: "80%",
                         }}
                     />
                 )}

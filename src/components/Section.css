@@ -8,23 +8,23 @@
 }
 
 .content-section-default {
-    background: rgba(17, 17, 17, 0.87);
+    background: linear-gradient(180deg, rgba(6, 25, 48, 0.88) 0.02%, rgba(8, 34, 49, 0.85) 10.94%, #021531 100%);
 }
 
 .content-section-alternative-1 {
-    background: url('assets/pattern1.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 0.87) 50%, rgba(17, 17, 17, 0.87) 100%);
+    background: url('/src/assets/pattern1.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
     background-size: contain;
     background-blend-mode: overlay;
 }
 
 .content-section-alternative-2 {
-    background: url('assets/pattern2.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 0.87) 50%, rgba(17, 17, 17, 0.87) 100%);
+    background: url('/src/assets/pattern2.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
     background-size: contain;
     background-blend-mode: overlay;
 }
 
 .content-section-alternative-3 {
-    background: url('assets/pattern3.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 0.87) 50%, rgba(17, 17, 17, 0.87) 100%);
+    background: url('/src/assets/pattern3.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
     background-size: contain;
     background-blend-mode: overlay;
 }

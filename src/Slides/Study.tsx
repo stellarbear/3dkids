@@ -80,7 +80,7 @@ export const Study: React.FC = () => {
       <Image src={`study${index}`} alt="slide background" fullScreen />
       <Section>
         <Container size="md">
-          <Col s={8}>
+          <Col s={8} m={8}>
             <Title>Какие дисциплины мы&nbsp;изучаем?</Title>
             <Divider style={{ marginBottom: 16 }} />
             <Carousel

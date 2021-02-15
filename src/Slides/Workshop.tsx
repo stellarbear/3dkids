@@ -25,7 +25,7 @@ export const Workshop: React.FC = () => (
             <Container size="lg">
                 <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt>
-                        Для чего нужна целая мастерская?
+                        Для чего нужна целая&nbsp;мастерская?
                     </Title>
                     <ClassPool type={["text-plane", "text-plane-3"]}>
                         <Col s={16} m={8}>

@@ -45,7 +45,7 @@ export const Sketches: React.FC = () => {
                 <Container size="md" style={{ overflow: "hidden" }}>
                     <Col s={8} m={8}>
                         <Title>
-                            Примеры проектов для наших учеников:
+                            Примеры проектов для&nbsp;наших&nbsp;учеников:
                         </Title>
                         <Divider style={{marginBottom: 16}}/>
                         <Carousel
