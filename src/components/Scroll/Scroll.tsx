@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useDebounce } from '../../hooks/useDebounce';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { Hidden } from '../Hidden';
 import { Slide } from '../Slide';
@@ -35,6 +34,10 @@ export const Scroll: React.FC<IProps> = (props) => {
     }, [scrollState]);
 
     console.log(active, JSON.stringify(scrollState));
+
+    React.useEffect(() => {
+        window.scrollTo({top: 0, behavior: "smooth"})
+    }, [])
 
     React.useEffect(() => {
         window.scrollTo({top: offsets[active], behavior: "smooth"}) 
