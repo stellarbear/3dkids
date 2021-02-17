@@ -12,8 +12,8 @@ interface IProps {
 
 export const Scroll: React.FC<IProps> = (props) => {
     const { children } = props;
-    const [prevScrollState, setPrevScrollState] = React.useState(0);
-    const [scrollState, setScrollState, forceSetScrollState] = useDebounce(48, 0);
+    const [touch] = React.useState({last: 0})
+    const [scrollState, setScrollState] = React.useState({up: false, down: false});
     const itemsRef = React.useRef<(HTMLDivElement | null)[]>([]);
     const [active, setActive] = React.useState(0);
 
@@ -21,51 +21,79 @@ export const Scroll: React.FC<IProps> = (props) => {
 
     const titles = React.useMemo(() => children.map(c => c[0]), []);
     const content = React.useMemo(() => children.map(c => c[1]), []);
+    const offsets = itemsRef.current.map(c => c?.offsetTop || 0);
 
     React.useEffect(() => {
-        if (prevScrollState === scrollState) {
-            return
+        const {up, down} = scrollState;
+
+        if (up) {
+            setActive(active => active > 0 ? active - 1 : 0);
+        } else if (down) {
+            const count = content.length - 1;
+            setActive(active => active < count ? (active + 1) : count);
+        }
+    }, [scrollState]);
+
+    console.log(active, JSON.stringify(scrollState));
+
+    React.useEffect(() => {
+        window.scrollTo({top: offsets[active], behavior: "smooth"}) 
+    }, [active])
+
+    React.useEffect(() => {
+        let scrolling = false;
+        let timer: NodeJS.Timer;
+
+        const onScroll = (event: WheelEvent) => {
+            if (!scrolling) {
+                if (event.deltaY >= 0) {
+                    setScrollState({down: true, up: false})
+                } else {
+                    setScrollState({down: false, up: true})
+                }
+
+                scrolling = true;
+            }
+
+            clearTimeout(timer) 
+            
+            timer = setTimeout(() => {
+                scrolling = false;
+            }, 50)
         }
 
-        const offsets = itemsRef.current.map(c => c?.offsetTop || 0);
-
-        for (let i = offsets.length - 1; i >= 0; i--) {
-            if (scrollState > offsets[i]) {
-                if (scrollState > prevScrollState) {
-                    setPrevScrollState(scrollState);
-                    window.scrollTo({top: offsets[i + 1], behavior: "smooth"}) 
-                } else {
-                    setPrevScrollState(offsets[i]);
-                    window.scrollTo({top: offsets[i], behavior: "smooth"}) 
-                }
+        const onTouchEnd = (event: TouchEvent) => {
+            const curr = event.changedTouches[0].clientY;
+            
+            if (Math.abs(curr - touch.last) < 50) {
                 return;
             }
-        }
-    }, [scrollState])
 
-    React.useEffect(() => {
-        const offsets = itemsRef.current.map(c => c?.offsetTop || 0);
-
-        const onScroll = () => {
-            const src = window.scrollY;
-            setScrollState(src);
-
-            for (let i = 1; i < offsets.length; i++) {
-                if (src < offsets[i] + 0 * (window.innerHeight / 3)) {
-                    setActive(i - 1);
-                    return;
-                }
+            if (curr < touch.last) {
+                setScrollState({down: true, up: false})
+            } else {
+                setScrollState({down: false, up: true})
             }
-
-            setActive(offsets.length - 1);
         }
 
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
+        const onTouchStart = (event: TouchEvent) => {
+            touch.last = event.touches[0].clientY;
+        }
+
+        window.addEventListener('wheel', onScroll);
+        window.addEventListener('touchend', onTouchEnd);
+        window.addEventListener('touchstart', onTouchStart);
+        return () => {
+            window.removeEventListener('wheel', onScroll);
+            window.removeEventListener('touchend', onTouchEnd);
+            window.removeEventListener('touchstart', onTouchStart);
+        }
     }, [windowSize]);
 
-    const onClick = (index: number) => 
+    const onClick = (index: number) => {
+        setActive(index);
         itemsRef.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     return (
         <>
