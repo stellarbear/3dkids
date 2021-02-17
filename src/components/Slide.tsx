@@ -7,6 +7,7 @@ export const Slide: React.FC = (props) => {
 
     return (
         <div style={{
+            transition: "all 0.3s",
             position: "relative",
             height: `${windowSize.height}px`,
         }}>
