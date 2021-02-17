@@ -40,7 +40,7 @@ export const Scroll: React.FC<IProps> = (props) => {
 
     React.useEffect(() => {
         window.scrollTo({top: itemsRef.current?.[active]?.offsetTop ?? 0, behavior: "smooth"}) 
-    }, [active])
+    }, [active, windowSize.height])
 
     React.useEffect(() => {
         let scrolling = false;
