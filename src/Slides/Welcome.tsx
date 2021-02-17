@@ -11,18 +11,18 @@ import { Image } from '../components/Image';
 import { ClassPool } from '../components/ClassPool';
 
 const content = [
-    `   3Dkids — это команда людей, объединенных одной общей идеей:`,
-    `    “Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности”.`,
-    `   Для этого мы разработали курсы, проходящие с использованием передовых 3D-технологий и игровых приложений, которые позволят ребенку с головой погрузиться в процесс обучения и познакомят его с такими направлениями как:`,
-    `3D-моделирование, 3D-печать, кинопроизводство, программирование.`
+    `   <b>3Dkids</b> — это команда людей, объединенных одной общей идеей:`,
+    `   <b><i>“Пробудить в детях искренний интерес к постоянному развитию в одной из самых востребованных отраслей современности”.</i></b>`,
+    `   Для этого мы разработали <b>курсы</b>, проходящие с использованием передовых <b>3D-технологий</b> и игровых <b>приложений</b>, которые позволят ребенку с головой погрузиться в процесс <b>обучения</b> и познакомят его с такими <b>направлениями</b> как:`,
+    `<b>3D-моделирование, 3D-печать, AR-кинопроизводство, VR-разработка.</b>`
 ];
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
-            <Video src="video1" fullScreen logo/>
+        <Video src="video1" fullScreen logo/>
         <Section alt={1}>
             <PlayButton link="https://www.youtube.com/embed/Xg9r5KHb2DA"/>
-            <Container size="md">
+            <Container size="md" overflow>
                 <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt style={{maxHeight: 100}}>
                         Добро пожаловать
@@ -31,10 +31,10 @@ export const Welcome: React.FC = () => (
                     </Title>
                     <ClassPool type={["text-plane", "text-plane-1"]}>
                         <Col s={16} m={8}>
-                            <Label>{content[0]}</Label>
-                            <Label>{content[1]}</Label>
-                            <Label>{content[2]}</Label>
-                            <Label>{content[3]}</Label>
+                            <Label asHtml>{content[0]}</Label>
+                            <Label asHtml>{content[1]}</Label>
+                            <Label asHtml>{content[2]}</Label>
+                            <Label asHtml>{content[3]}</Label>
                         </Col>
                     </ClassPool>
                     <Hidden less="lg">

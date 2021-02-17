@@ -89,7 +89,6 @@ export const Scroll: React.FC<IProps> = (props) => {
 
     const onClick = (index: number) => {
         setActive(index);
-        itemsRef.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     return (

@@ -23,7 +23,6 @@ export const PlayButton: React.FC<IProps> = (props) => {
             position: "absolute",
             cursor: "pointer",
             zIndex: 4,
-            top: "-13%",
             left: 0, right: 0,
         }}
             onClick={() => call(<YouTubeDialog src={link} />)}

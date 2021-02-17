@@ -6,6 +6,7 @@ interface IProps {
     style?: React.CSSProperties
     size?: Size
     thin?: boolean
+    overflow?: boolean
 }
 
 const pick = (size: Size) => {
@@ -24,7 +25,7 @@ const pick = (size: Size) => {
 }
 
 export const Container: React.FC<IProps> = (props) => {
-    const { children, style = {}, size = "md", thin = false } = props;
+    const { children, style = {}, size = "md", thin = false, overflow = false } = props;
 
     return (
         <div
@@ -32,6 +33,7 @@ export const Container: React.FC<IProps> = (props) => {
                 ...style,
                 padding: thin ? 0 : 8,
                 margin: thin ? "0px auto" : "8px auto",
+                marginTop: overflow ? 64 : "unset",
                 maxWidth: pick(size)
             }}
         >

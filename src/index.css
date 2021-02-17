@@ -1,6 +1,12 @@
 @font-face {
     font-family: 'Noah';
+    font-weight: normal;
     src: local('Noah'), url(./fonts/Noah.woff) format('woff');
+}
+@font-face {
+    font-family: 'Noah';
+    font-weight: bold;
+    src: local('NoahBold'), url(./fonts/NoahBold.woff) format('woff');
 }
 @font-face {
     font-family: 'Bebas';
