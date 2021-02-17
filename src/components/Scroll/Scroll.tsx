@@ -17,6 +17,7 @@ export const Scroll: React.FC<IProps> = (props) => {
     const [active, setActive] = React.useState(0);
 
     const [windowSize] = useWindowSize();
+    const [position, setPosition] = React.useState(0);
 
     const titles = React.useMemo(() => children.map(c => c[0]), []);
     const content = React.useMemo(() => children.map(c => c[1]), []);
@@ -32,14 +33,8 @@ export const Scroll: React.FC<IProps> = (props) => {
         }
     }, [scrollState]);
 
-    console.log(active, JSON.stringify(scrollState));
-
     React.useEffect(() => {
-        window.scrollTo({top: 0, behavior: "smooth"})
-    }, [])
-
-    React.useEffect(() => {
-        window.scrollTo({top: itemsRef.current?.[active]?.offsetTop ?? 0, behavior: "smooth"}) 
+        setPosition(itemsRef.current?.[active]?.offsetTop ?? 0);
     }, [active, windowSize.height])
 
     React.useEffect(() => {
@@ -113,6 +108,10 @@ export const Scroll: React.FC<IProps> = (props) => {
                     onClick={onClick}
                 />
             </Hidden>
+            <div style={{
+                transform: `translate3d(0px, ${-position}px, 0px)`,
+                transition: `all 0.5s`
+            }}>
             {
                 React.Children.map(content, (child, index) => (
                     <div
@@ -124,6 +123,7 @@ export const Scroll: React.FC<IProps> = (props) => {
                     </div>
                 ))
             }
+            </div>
         </>
     )
 }
