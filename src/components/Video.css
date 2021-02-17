@@ -1,10 +1,10 @@
 .test {
     border-left: 2px solid #8D8D8D;
     position: absolute;
-    left: 1%;
-    right: 1%;
-    top: -3%;
-    bottom: -3%;
+    left: 8px;
+    right: 8px;
+    top: -8px;
+    bottom: -8px;
     overflow: hidden;
 }
 .test:after,
