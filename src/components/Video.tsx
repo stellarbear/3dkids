@@ -25,6 +25,7 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false 
         <>
             <video
                 style={fullScreen ? {
+                    transition: "all 0.3s",
                     position: "absolute",
                     width: "100%",
                     height: "100%",
@@ -65,15 +66,18 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false 
                             right: "5%",
                             width: "90%",
                             height: "90%",
+                            transition: "all 0.3s",
                         } : {
                             top: "18%",
                             right: "10%",
                             width: "80%",
                             height: "76%",
+                            transition: "all 0.3s",
                         })
                     }}>
                         <video
                             style={fullScreen ? {
+                                transition: "all 0.3s",
                                 position: "absolute",
                                 width: "100%",
                                 height: "100%",
@@ -89,8 +93,3 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false 
         </>
     )
 }
-
-
-/*
-
-*/
