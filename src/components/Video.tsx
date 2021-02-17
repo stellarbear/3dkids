@@ -11,12 +11,14 @@ interface IProps {
 export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false }) => {
     const [size] = useWindowSize();
     const [height, setHeight] = React.useState(size.height);
+    const [shift, setShift] = React.useState(0);
     const ref = React.useRef<(HTMLDivElement | null)>(null);
 
     React.useEffect(() => {
-        if (ref.current) {
+        if (ref.current) {;
             const windowHeight = size.height;
             const bottomHeight = ref.current.parentElement?.lastElementChild?.clientHeight ?? 0;
+            setShift(ref.current.nextElementSibling?.clientHeight ?? 0)
             setHeight(windowHeight - bottomHeight);
         }
     }, [ref])
@@ -39,7 +41,8 @@ export const Video: React.FC<IProps> = ({ src, fullScreen = false, logo = false 
                     height,
                     width: "100%",
                     zIndex: 3,
-                    position: "relative"
+                    position: "absolute",
+                    bottom: shift
                 }}>
                 {logo && (
                     <img 

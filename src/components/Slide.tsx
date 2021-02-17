@@ -7,6 +7,7 @@ export const Slide: React.FC = (props) => {
 
     return (
         <div style={{
+            overflow: "hidden",
             position: "relative",
             height: `${windowSize.height}px`,
         }}>

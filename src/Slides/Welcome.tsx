@@ -19,7 +19,7 @@ const content = [
 
 export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
-        <Video src="video1" fullScreen logo/>
+            <Video src="video1" fullScreen logo/>
         <Section alt={1}>
             <PlayButton link="https://www.youtube.com/embed/Xg9r5KHb2DA"/>
             <Container size="md">
