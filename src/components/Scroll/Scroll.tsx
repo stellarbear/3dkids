@@ -20,7 +20,6 @@ export const Scroll: React.FC<IProps> = (props) => {
 
     const titles = React.useMemo(() => children.map(c => c[0]), []);
     const content = React.useMemo(() => children.map(c => c[1]), []);
-    const offsets = itemsRef.current.map(c => c?.offsetTop || 0);
 
     React.useEffect(() => {
         const {up, down} = scrollState;
@@ -40,7 +39,7 @@ export const Scroll: React.FC<IProps> = (props) => {
     }, [])
 
     React.useEffect(() => {
-        window.scrollTo({top: offsets[active], behavior: "smooth"}) 
+        window.scrollTo({top: itemsRef.current?.[active]?.offsetTop ?? 0, behavior: "smooth"}) 
     }, [active])
 
     React.useEffect(() => {
