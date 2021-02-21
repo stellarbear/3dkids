@@ -2,8 +2,6 @@
     font-family: Bebas;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 50px;
     color: inherit;
 }
 
@@ -13,8 +11,8 @@
 
 @media screen and (min-width: 769px) {
     .content-title {
-        font-size: 55px;
-        line-height: 50px;
+        font-size: 45px;
+        line-height: 45px;
     }
 }
 @media screen and (max-width: 768px) {

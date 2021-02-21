@@ -1,14 +1,15 @@
 import React from 'react';
-import { Video } from '../components/Video';
-import { Image } from '../components/Image';
-import { Title } from '../components/Title';
-import { Label } from '../components/Label';
-import { Col } from '../components/Flex';
-import { Container } from '../components/Container';
-import { PlayButton } from '../components/PlayButton';
-import { Section } from '../components/Section';
-import { Hidden } from '../components/Hidden';
-import { ClassPool } from '../components/ClassPool';
+import {Video} from '../components/Video';
+import {Image} from '../components/Image';
+import {Title} from '../components/Title';
+import {Label} from '../components/Label';
+import {Col} from '../components/Flex';
+import {Container} from '../components/Container';
+import {PlayButton} from '../components/PlayButton';
+import {Section} from '../components/Section';
+import {Hidden} from '../components/Hidden';
+import {ClassPool} from '../components/ClassPool';
+import {Footer} from '../components/Footer';
 
 const content = [
     `   Во время занятий дети изучают <b>на практике</b> все виды <b>3D-производства</b>, проходя вместе с нами <b>каждый этап</b> от задумки до реализации. Но, как известно, любое <b>производство</b> имеет однотипные <b>процессы</b>, которые могли бы затратить большую часть <b>времени</b>, отведенного под наши <b>занятия</b>.`,
@@ -16,14 +17,14 @@ const content = [
 ]
 
 export const Workshop: React.FC = () => (
-    <div style={{ color: "white" }}>
+    <div style={{color: "white"}}>
         <Video src="video3" fullScreen />
         <Section alt={3}>
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
             <Container size="lg" overflow>
-                <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
+                <Col s={8} m={8} align="flex-start" style={{position: "relative"}}>
                     <Title alt>
                         Для чего нужна целая&nbsp;мастерская?
                     </Title>
@@ -42,6 +43,7 @@ export const Workshop: React.FC = () => (
                     </Hidden>
                 </Col>
             </Container>
+            <Footer />
         </Section>
     </div>
 )

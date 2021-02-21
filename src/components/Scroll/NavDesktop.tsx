@@ -25,7 +25,7 @@ export const NavDesktop: React.FC<IProps> = (props) => {
                 <Row justify="space-between" align="center">
                     <Hidden less="lg">
                         <img
-                            style={{margin: "0px 8px"}}
+                            style={{margin: "0px 8px", height: 46}}
                             src="images/logo.png" />
                     </Hidden>
                     <Row justify="flex-end">
