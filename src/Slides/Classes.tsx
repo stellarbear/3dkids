@@ -23,9 +23,9 @@ export const Classes: React.FC = () => (
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
-            <Container size="lg" overflow>
+            <Container size="md" overflow>
                 <Col align="flex-start" style={{ position: "relative" }}
-                    s={8} m={8}>
+                    m={8}>
                     <Title alt style={{maxHeight: 80}}>
                         Как проходят наши&nbsp;занятия?
                     </Title>
@@ -41,7 +41,7 @@ export const Classes: React.FC = () => (
                     <Hidden less="lg">
                         <Image style={{
                             position: "absolute",
-                            right: "88%", top: "22%"
+                            right: "91%", top: "10%"
                         }} src="dragon" alt="" />
                     </Hidden>
                 </Col>

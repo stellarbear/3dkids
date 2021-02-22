@@ -25,7 +25,7 @@ const content = [
 `   Выполняя <b>проекты по 3D-печати</b>, наши ученики под руководством преподавателей производят <b>серию игрушек</b> (от подарочных изделий, состоящих из одного элемента, до многофункциональных механизмов).
     Помимо изделий дети получают <b>уникальный опыт</b> и <b>знания</b>, необходимые им в будущем для <b>прототипирования</b> и создания собственных <b>произведений искусства</b>. `
 ], [
-"AR-трансляция", "AR",
+"AR‑трансляция", "AR",
 `   Сегодня <b>дополненная реальность</b> является активно развивающимся и очень перспективным направлением в сфере <b>телевидения</b> и <b>кино</b>.
     Поэтому мы подготовили для наших учеников <b>проекты</b>, которые дадут им отличную возможность <b>на практике</b> поработать с <b>камерой</b>, <b>хромакеем</b>, <b>системой трекинга</b>, чтобы затем вместе провести собственную <b>трансляцию с дополненной реальностью</b>.`
 ], [
@@ -42,7 +42,7 @@ export const Sketches: React.FC = () => {
         <div style={{ color: "white" }}>
             <Image responsive src={`sketch-${content[index][1]}`} alt="sketch image" fullScreen />
             <Section>
-                <Container size="md" style={{ overflow: "hidden" }}>
+                <Container size="sm" style={{ overflow: "hidden" }}>
                     <Col s={8} m={8}>
                         <Title>
                             Примеры проектов для&nbsp;наших&nbsp;учеников:
@@ -51,7 +51,7 @@ export const Sketches: React.FC = () => {
                         <Carousel
                             arrows infinite
                             onChange={setIndex}
-                            buttonStyle={{maxWidth: 'fit-content', minHeight: 55}}
+                            buttonStyle={{maxWidth: 'fit-content', minHeight: 44}}
                             titles={content.map(c => c[0])}
                             top={(
                                 <Hidden less="lg">

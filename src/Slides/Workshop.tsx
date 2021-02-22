@@ -24,7 +24,7 @@ export const Workshop: React.FC = () => (
                 transform: "translate(0, -50%)"
             }} />}
             <Container size="lg" overflow>
-                <Col s={8} m={8} align="flex-start" style={{position: "relative"}}>
+                <Col m={8} align="flex-start" style={{position: "relative"}}>
                     <Title alt>
                         Для чего нужна целая&nbsp;мастерская?
                     </Title>

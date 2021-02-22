@@ -72,10 +72,10 @@ export const Video: React.FC<IProps> = ({src, fullScreen = false, logo = false})
                             width: "90%",
                             height: "90%",
                         } : {
-                                top: "8%",
+                                top: "12%",
                                 right: "10%",
                                 width: "80%",
-                                height: "86%",
+                                height: "84%",
                             })
                     }}>
                     <video

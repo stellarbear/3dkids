@@ -60,7 +60,7 @@ export const Study: React.FC = () => {
 
 	const renderImage = (icon: string) => (
 		<Hidden less="sm">
-			<Image src={icon} alt="" style={{ maxHeight: 240 }} />
+			<Image src={icon} alt="" style={{ maxHeight: 200 }} />
 		</Hidden>
 	);
 

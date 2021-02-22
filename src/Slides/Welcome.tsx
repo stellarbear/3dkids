@@ -22,8 +22,8 @@ export const Welcome: React.FC = () => (
         <Video src="video1" fullScreen logo/>
         <Section alt={1}>
             <PlayButton link="https://www.youtube.com/embed/Xg9r5KHb2DA"/>
-            <Container size="md" overflow>
-                <Col s={8} m={8} align="flex-start" style={{ position: "relative" }}>
+            <Container size="sm" overflow>
+                <Col m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt style={{maxHeight: 100}}>
                         Добро пожаловать
                         <br />
@@ -37,10 +37,10 @@ export const Welcome: React.FC = () => (
                             <Label asHtml>{content[3]}</Label>
                         </Col>
                     </ClassPool>
-                    <Hidden less="lg">
+                    <Hidden less="md">
                         <Image style={{
                             position: "absolute",
-                            right: "88%", top: "18%"
+                            right: "84%", top: "8%"
                         }} src="intro_knight" alt="" />
                     </Hidden>
                 </Col>

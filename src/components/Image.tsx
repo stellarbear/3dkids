@@ -8,15 +8,18 @@ interface IProps {
     style?: React.CSSProperties
 }
 
-export const Image: React.FC<IProps> = ({ src, alt, style = {}, fullScreen = false, responsive = false }) => {
-    const [height] = React.useState(window.innerHeight)
+const threshold = 425;
+
+export const Image: React.FC<IProps> = (props) => {
+    const { src, alt, style = {}, fullScreen = false, responsive = false } = props;
+
     return (
         <div>
             <picture>
                 {responsive && (
                     <source 
                         srcSet={`images/${src}-mob.webp`} 
-                        media={`(max-width: 400px)`}
+                        media={`(max-width: ${threshold}px)`}
                         type="image/webp"/>
                 )}
                 <source 
@@ -25,7 +28,7 @@ export const Image: React.FC<IProps> = ({ src, alt, style = {}, fullScreen = fal
                 {responsive && (
                     <source 
                         srcSet={`images/${src}-mob.png`} 
-                        media={`(max-width: 400px)`}/>
+                        media={`(max-width: ${threshold}px)`}/>
                 )}
                 <source 
                     srcSet={`images/${src}.png`} />
@@ -33,11 +36,11 @@ export const Image: React.FC<IProps> = ({ src, alt, style = {}, fullScreen = fal
                     fullScreen ? {
                         position: "absolute",
                         width: "100%",
-                        height: `${height}px`,
+                        height: `100%`,
                         objectFit: "cover",
+                        objectPosition: "top",
                         ...style,
-                    }: style
-                    }
+                    }: style}
                     height="inherit" src={`images/${src}.png`} alt={alt}/>
             </picture>
         </div>
