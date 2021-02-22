@@ -3,7 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 0;
-    width: 40px;
+    width: 35px;
     position: absolute;
     top: 50%;
     background-image: url('/src/assets/left.png');
@@ -16,7 +16,7 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 0;
-    width: 40px;
+    width: 35px;
     position: absolute;
     right: 0;
     top: 50%;
