@@ -134,7 +134,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     );
 
     return (
-        <Col s={8} style={{ position: 'relative', overflow:'hidden' }}>
+        <Col s={12} style={{ position: 'relative', overflow:'hidden' }}>
             {titles && (arrows
                 ? renderActionsWithArrows(titles)
                 : renderActionsDefault(titles))}

@@ -13,23 +13,27 @@ export const PlayButton: React.FC<IProps> = (props) => {
     const { call } = useModal();
 
     return (
-        <div className="play-button" style={{
+        <div style={{
             ...style,
-            width: 80,
-            height: 80,
             margin: "auto",
-            backgroundColor: "#FF2747",
-            borderRadius: "50%",
             position: "absolute",
             cursor: "pointer",
             zIndex: 4,
             left: 0, right: 0,
+            width: 100,
+            height: 100,
         }}
             onClick={() => call(<YouTubeDialog src={link} />)}
         >
             <img style={{
-                top: 11,
-                left: 11,
+                width: 100,
+                height: 100,
+                position: "absolute"
+            }} src="images/play-outer.svg" alt="" />
+            <img className="play-button" style={{
+                top: 8, left: 11,
+                width: 80,
+                height: 80,
                 position: "absolute"
             }} src="images/play.png" alt="" />
         </div>

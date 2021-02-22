@@ -81,7 +81,7 @@ export const Study: React.FC = () => {
 				<Container size="md">
 					<Col s={8} m={8}>
 						<Title>Какие дисциплины мы&nbsp;изучаем?</Title>
-						<Divider style={{ marginBottom: 16 }} />
+						<Divider style={{ marginBottom: 8 }} />
 						<Carousel
 							arrows
 							infinite
@@ -89,18 +89,11 @@ export const Study: React.FC = () => {
 							titles={content.map((c) => c[0].toUpperCase())}
 						>
 							{content.map(([, icon, ...text], index) => (
-								<Row m={8} s={32} key={index} justify="center">
-									{index % 2 ? (
-										<>
-											{renderImage(icon)}
-											{renderText(text)}
-										</>
-									) : (
-											<>
-												{renderText(text)}
-												{renderImage(icon)}
-											</>
-										)}
+								<Row m={[0, 8]} s={32} key={index} justify="center">\
+									<>
+										{renderImage(icon)}
+										{renderText(text)}
+									</>
 								</Row>
 							))}
 						</Carousel>

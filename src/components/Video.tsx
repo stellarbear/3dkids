@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const autoplay = true;
-const delta = 80;
+const delta = 112;
 
 export const Video: React.FC<IProps> = ({src, fullScreen = false, logo = false}) => {
     const {loaded} = useApp();

@@ -7,7 +7,6 @@ import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Carousel } from '../components/Carousel';
 import { Divider } from '../components/Divider';
-import { Hidden } from '../components/Hidden';
 
 const top = `   <b>Во время обучения мы с учениками выполняем ряд уникальных проектов, которые были созданы с целью вызвать интерес у детей к процессу обучения и на практике закрепить полученные знания:</b>`;
 
@@ -47,19 +46,17 @@ export const Sketches: React.FC = () => {
                         <Title>
                             Примеры проектов для&nbsp;наших&nbsp;учеников:
                         </Title>
-                        <Divider style={{marginBottom: 16}}/>
+                        <Divider style={{marginBottom: 8}}/>
                         <Carousel
                             arrows infinite
                             onChange={setIndex}
                             buttonStyle={{maxWidth: 'fit-content', minHeight: 44}}
                             titles={content.map(c => c[0])}
                             top={(
-                                <Hidden less="lg">
-                                    <Col s={16}>
-                                        <Label asHtml>{top}</Label>
-                                        <Divider/>
-                                    </Col>
-                                </Hidden>
+                                <Col s={16}>
+                                    <Label asHtml>{top}</Label>
+                                    <Divider/>
+                                </Col>
                             )}
                         >
                             {content.map(([title, , text], index) => (

@@ -33,7 +33,7 @@ export const Container: React.FC<IProps> = (props) => {
                 ...style,
                 padding: thin ? 0 : 8,
                 margin: thin ? "0px auto" : "8px auto",
-                marginTop: overflow ? 64 : "unset",
+                marginTop: overflow ? 100 : "unset",
                 maxWidth: pick(size)
             }}
         >

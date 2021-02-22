@@ -1,5 +1,5 @@
 .test {
-    border-left: 2px solid #8D8D8D;
+    border-left: 2px solid #FFFFFF;
     position: absolute;
     left: 8px;
     right: 8px;
@@ -18,7 +18,7 @@
 .test:before {
     height: 20%;
     top: 0px;
-    border: 2px solid #8D8D8D;
+    border: 2px solid #FFFFFF;
     border-width: 2px 3px 0px 0px;
     transform: skew(45deg);
     transform-origin: right bottom;
@@ -26,6 +26,6 @@
 .test:after {
     height: calc(80% - 4px);
     bottom: 0px;
-    border: 2px solid #8D8D8D;
+    border: 2px solid #FFFFFF;
     border-width: 0px 2px 2px 0px;
 }
