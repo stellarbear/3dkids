@@ -40,7 +40,7 @@ export const Sketches: React.FC = () => {
 
     return (
         <div style={{ color: "white" }}>
-            <Image src={`sketch-${content[index][1]}`} alt="sketch image" fullScreen />
+            <Image responsive src={`sketch-${content[index][1]}`} alt="sketch image" fullScreen />
             <Section>
                 <Container size="md" style={{ overflow: "hidden" }}>
                     <Col s={8} m={8}>
@@ -51,7 +51,7 @@ export const Sketches: React.FC = () => {
                         <Carousel
                             arrows infinite
                             onChange={setIndex}
-                            buttonStyle={{maxWidth: 128, minHeight: 55}}
+                            buttonStyle={{maxWidth: 'fit-content', minHeight: 55}}
                             titles={content.map(c => c[0])}
                             top={(
                                 <Hidden less="lg">

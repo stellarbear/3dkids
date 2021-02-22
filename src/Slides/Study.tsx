@@ -76,7 +76,7 @@ export const Study: React.FC = () => {
 
 	return (
 		<div style={{ color: "white" }}>
-			<Image src={`study${index}`} alt="slide background" fullScreen />
+			<Image responsive src={`study${index}`} alt="slide background" fullScreen />
 			<Section>
 				<Container size="md">
 					<Col s={8} m={8}>
