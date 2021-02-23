@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { Col, Row } from "../Flex";
 import { Slides } from "./Slides";
 import './Carousel.css'
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 interface IProps {
     top?: React.ReactNode;
@@ -14,13 +15,6 @@ interface IProps {
 
     buttonStyle?: React.CSSProperties;
 }
-
-const iconStye: React.CSSProperties = ({
-    transform: "translateY(-50%)",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    padding: 0, width: 40,
-})
 
 export const Carousel: React.FC<IProps> = (props) => {
     const {
@@ -34,6 +28,7 @@ export const Carousel: React.FC<IProps> = (props) => {
     } = props;
 
     const [slide, setSlide] = React.useState(0);
+    const [{width}] = useWindowSize();
     const itemsRef = React.useRef<(HTMLDivElement | null)[]>([]);
     const actionRef = React.useRef<(HTMLDivElement | null)>(null);
 
@@ -84,7 +79,7 @@ export const Carousel: React.FC<IProps> = (props) => {
                     display: "grid",
                     gridGap: 16,
                     gridAutoFlow: "column",
-                    gridAutoColumns: "minmax(max-content,1fr)",
+                    gridTemplateColumns: width > 425 ? "auto" : `repeat(${titles.length}, 100%)`,
                     overflowX: "hidden",
                     margin: "0px 60px",
                     position: 'relative'
