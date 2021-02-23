@@ -35,6 +35,7 @@ export const Video: React.FC<IProps> = ({src, fullScreen = false, logo = false})
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
+                    zIndex: -1,
                 } : {}}
                 loop={true} muted={true} autoPlay={autoplay} preload="metadata">
                 <source src={`videos/${src}_blur.webm`} type="video/webm" />
