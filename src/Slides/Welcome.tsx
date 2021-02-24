@@ -21,7 +21,7 @@ export const Welcome: React.FC = () => (
     <div style={{ color: "white" }}>
         <Video src="video1" fullScreen logo/>
         <Section alt={1}>
-            <PlayButton link="https://www.youtube.com/embed/Xg9r5KHb2DA"/>
+            <PlayButton link="https://www.youtube.com/embed/wNPn--yUPP0"/>
             <Container size="sm" overflow>
                 <Col m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt style={{maxHeight: 100}}>
