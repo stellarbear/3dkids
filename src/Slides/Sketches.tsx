@@ -50,7 +50,7 @@ export const Sketches: React.FC = () => {
                         <Carousel
                             arrows infinite
                             onChange={setIndex}
-                            buttonStyle={{maxWidth: 'fit-content', minHeight: 44}}
+                            buttonStyle={{minHeight: 44}}
                             titles={content.map(c => c[0])}
                             top={(
                                 <Col s={16}>

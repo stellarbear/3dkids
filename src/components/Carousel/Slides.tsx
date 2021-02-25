@@ -35,7 +35,7 @@ export const Slides: React.FC<IProps> = (props) => {
     return (
         <Row style={{
             ...style,
-            transition: "all 0.1s",
+            transition: "all ease-in-out 0.6s",
             transform: isTouching
                 ? `${slideShift} ${touchShift}`
                 : `${slideShift}`,

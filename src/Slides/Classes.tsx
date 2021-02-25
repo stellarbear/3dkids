@@ -41,7 +41,7 @@ export const Classes: React.FC = () => (
                     <Hidden less="lg">
                         <Image style={{
                             position: "absolute",
-                            right: "91%", top: "10%"
+                            right: "91%", top: "5%"
                         }} src="dragon" alt="" />
                     </Hidden>
                 </Col>

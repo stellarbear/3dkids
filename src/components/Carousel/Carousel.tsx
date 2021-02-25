@@ -37,9 +37,35 @@ export const Carousel: React.FC<IProps> = (props) => {
         setSlide(index);
     }
 
-    const onRight = () => updateSlide(slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide));
-    const onLeft = () => updateSlide(slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide));
-    const onCustom = (index: number) => updateSlide(index);
+    const onRight = () => {
+        onCustom(slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide))
+    };
+    const onLeft = () => {
+        onCustom(slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide))
+    };
+    const onCustom = (index: number) => {
+        updateSlide(index);
+
+        const offset = itemsRef.current[index]?.offsetLeft ?? 0
+        const parent = (actionRef.current?.clientWidth ?? 0);
+        const current = (itemsRef.current[index]?.clientWidth ?? 0);
+        const delta = offset - (parent - current) / 2
+        actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
+    }
+
+    const renderDots = (titles: string[]) => (
+        <Row s={8} wrap justify="center" align="center" fullWidth>
+            {
+                titles.map((title, index) => (
+                    <div
+                        className={index !== slide ? "carousel-dot-inactive" : "carousel-dot-active"}
+                        onClick={() => onCustom(index)}>
+                            <div className={index !== slide ? "inactive" : "active"}/>
+                    </div>
+                ))
+            }
+        </Row>
+    )
 
     const renderActionsDefault = (titles: string[]) => (
         <Row wrap justify="center" fullWidth>
@@ -63,15 +89,7 @@ export const Carousel: React.FC<IProps> = (props) => {
 
     const renderActionsWithArrows = (titles: string[]) => (
         <div style={{ position: "relative" }}>
-            <Button black onClick={() => {
-                onLeft();
-                const left = slide > 0 ? slide - 1 : (infinite ? children.length - 1 : slide);
-                const offset = itemsRef.current[left]?.offsetLeft ?? 0
-                const parent = (actionRef.current?.clientWidth ?? 0);
-                const current = (itemsRef.current[left]?.clientWidth ?? 0);
-                const delta = offset - (parent - current) / 2
-                actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
-            }} className="left-arrow"/>
+            <Button black onClick={onLeft} className="left-arrow"/>
             <div
                 ref={actionRef}
                 style={{
@@ -94,27 +112,12 @@ export const Carousel: React.FC<IProps> = (props) => {
                                 asSubTitle
                                 style={buttonStyle}
                                 active={index === slide}
-                                onClick={() => {
-                                    onCustom(index);
-                                    const left = (itemsRef.current[index]?.offsetLeft ?? 0);
-                                    const parent = (itemsRef.current[index]?.parentElement?.clientWidth ?? 0);
-                                    const current = (itemsRef.current[index]?.clientWidth ?? 0);
-                                    const delta = left - (parent - current) / 2
-                                    itemsRef.current[index]?.parentElement?.scrollTo({ left: delta, behavior: "smooth" })
-                                }}>{title}</Button>
+                                onClick={() => onCustom(index)}>{title}</Button>
                         </div>
                     ))
                 }
             </div>
-            <Button black onClick={() => {
-                onRight();
-                const right = slide < children.length - 1 ? slide + 1 : (infinite ? 0 : slide);
-                const offset = itemsRef.current[right]?.offsetLeft ?? 0
-                const parent = (actionRef.current?.clientWidth ?? 0);
-                const current = (itemsRef.current[right]?.clientWidth ?? 0);
-                const delta = offset - (parent - current) / 2
-                actionRef.current?.scrollTo({ left: delta, behavior: "smooth" })
-            }} className="right-arrow"/>
+            <Button black onClick={onRight} className="right-arrow"/>
         </div>
     );
 
@@ -133,6 +136,7 @@ export const Carousel: React.FC<IProps> = (props) => {
             {titles && (arrows
                 ? renderActionsWithArrows(titles)
                 : renderActionsDefault(titles))}
+            {titles && renderDots(titles)}
             {top}
             {renderSlides()}
         </Col>

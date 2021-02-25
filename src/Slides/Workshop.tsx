@@ -37,8 +37,8 @@ export const Workshop: React.FC = () => (
                     <Hidden less="lg">
                         <Image style={{
                             position: "absolute",
-                            top: "23%",
-                            left: "80%",
+                            top: "9%",
+                            left: "79%",
                         }} src="anvil" alt="" />
                     </Hidden>
                 </Col>
