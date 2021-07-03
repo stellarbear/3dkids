@@ -1,0 +1,4 @@
+.slide-gradient {
+    color: white;
+    background: url('/src/assets/pixels.png'), linear-gradient(180deg, rgba(50, 255, 230, 0.7125) 0%, rgba(0, 255, 240, 0.7125) 29.69%, rgba(153, 53, 254, 0.75) 69.79%);
+}

@@ -10,6 +10,7 @@ import {Section} from '../components/Section';
 import {Hidden} from '../components/Hidden';
 import {ClassPool} from '../components/ClassPool';
 import {Footer} from '../components/Footer';
+import "./index.css"
 
 const content = [
     `   Во время занятий дети изучают <b>на практике</b> все виды <b>3D-производства</b>, проходя вместе с нами <b>каждый этап</b> от задумки до реализации. Но, как известно, любое <b>производство</b> имеет однотипные <b>процессы</b>, которые могли бы затратить большую часть <b>времени</b>, отведенного под наши <b>занятия</b>.`,
@@ -17,16 +18,16 @@ const content = [
 ]
 
 export const Workshop: React.FC = () => (
-    <div style={{color: "white"}}>
+    <div className="slide-gradient">
         <Video src="video3" fullScreen />
-        <Section alt={3}>
+        <Section alt>
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
             <Container size="lg" overflow>
                 <Col m={8} align="flex-start" style={{position: "relative"}}>
                     <Title alt>
-                        Для чего нужна целая&nbsp;мастерская?
+                        Ну и немного о нашей команде!
                     </Title>
                     <ClassPool type={["text-plane", "text-plane-3"]}>
                         <Col s={16} m={8}>
@@ -35,11 +36,28 @@ export const Workshop: React.FC = () => (
                         </Col>
                     </ClassPool>
                     <Hidden less="lg">
-                        <Image style={{
+                        <Image className="image-sticker" style={{
                             position: "absolute",
-                            top: "9%",
-                            left: "79%",
+                            top: "19%",
+                            left: "81%",
+                            zoom: 0.85
                         }} src="anvil" alt="" />
+                    </Hidden>
+                    <Hidden less="md">
+                        <Image className="image-sticker" style={{
+                            position: "absolute",
+                            left: "-2%", bottom: "2%",
+                            zoom: 0.9
+                        }} src="sm5" alt="" />
+                    </Hidden>
+                    <Hidden less="md">
+                        <Image className="image-sticker" style={{
+                            position: "absolute",
+                            left: "3%",
+                            top: "-33%",
+                            transform: "rotate(26deg)",
+                            zIndex: 10,
+                        }} src={`arrow_2_3_4_5`} alt="" />
                     </Hidden>
                 </Col>
             </Container>

@@ -1,21 +1,25 @@
-.test {
+video {
+    border: 2px solid white;
+}
+
+.video-border {
     border-left: 2px solid #FFFFFF;
     position: absolute;
     left: 8px;
     right: 8px;
     top: -8px;
-    bottom: -8px;
+    bottom: -13px;
     overflow: hidden;
 }
-.test:after,
-.test:before {
+.video-border:after,
+.video-border:before {
     position: absolute;
     content: '';
     width: calc(100% - 2px);
     left: 0px;
     z-index: 5;
 }
-.test:before {
+.video-border:before {
     height: 20%;
     top: 0px;
     border: 2px solid #FFFFFF;
@@ -23,7 +27,7 @@
     transform: skew(45deg);
     transform-origin: right bottom;
 }
-.test:after {
+.video-border:after {
     height: calc(80% - 4px);
     bottom: 0px;
     border: 2px solid #FFFFFF;

@@ -1,0 +1,15 @@
+.mount-wrapper {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.mount-plate {
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: 0;
+    background: #000000;
+    border: 2px solid #FFFFFF;
+    bottom: 0;
+    opacity: 0.85;
+}

@@ -9,7 +9,7 @@ interface IProps {
 export const Title: React.FC<IProps> = ({ children, style = {}, alt = false }) => (
     <div style={style} className={alt 
         ? "content-title content-title-alt"
-        : "content-title"}>
+        : "content-title content-title-base"}>
         {children}
     </div>
 )

@@ -1,21 +1,22 @@
 .text-plane {
     border: 2px solid #FFFFFF;
-    background: #122638;
-    border-radius: 3px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
 }
 
 
 @media screen and (min-width: 769px) {
     .text-plane-1 {
-        padding: 16px 2% 16px 10%;
+        padding: 16px 12% 16px 10%;
     }
 
     .text-plane-2 {
-        padding: 16px 5% 16px 7%;
+        padding: 16px 8% 16px 8%;
     }
 
     .text-plane-3 {
-        padding: 16px 15% 16px 6%;
+        padding: 16px 15% 16px 5%;
     }
 }
 

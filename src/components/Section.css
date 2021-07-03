@@ -8,38 +8,33 @@
 }
 
 .content-section-default {
-    background: linear-gradient(180deg, rgba(6, 25, 48, 0.88) 0.02%, rgba(8, 34, 49, 0.85) 10.94%, #021531 100%);
+    background: url('/src/assets/pixels.png'), linear-gradient(90.02deg, rgba(116, 96, 223, 0.9) 4.5%, rgba(207, 82, 153, 0.965517) 23.17%, #FF4A74 48.4%, rgba(215, 80, 146, 0.971579) 73.13%, rgba(116, 96, 223, 0.9) 96.35%)
 }
 
-.content-section-alternative-1 {
-    background: url('/src/assets/pattern.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+.content-section-alternative {
+    background: linear-gradient(90.02deg, rgba(116, 96, 223, 0.9) 4.5%, rgba(207, 82, 153, 0.965517) 23.17%, #FF4A74 48.4%, rgba(215, 80, 146, 0.971579) 73.13%, rgba(116, 96, 223, 0.9) 96.35%), url('/src/assets/pixels.png');
     background-size: contain;
     background-blend-mode: overlay;
 }
 
-.content-section-alternative-2 {
-    background: url('/src/assets/pattern.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
+.content-section-alternative > .section-middle {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: url('/src/assets/pattern.png');
     background-size: contain;
-    background-blend-mode: overlay;
-}
-
-.content-section-alternative-3 {
-    background: url('/src/assets/pattern.png'), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(6, 25, 48, 0.88) 50%, rgba(8, 34, 49, 0.85) 52.62%, #021531 100%);
-    background-size: contain;
-    background-blend-mode: overlay;
 }
 
 @media screen and (min-width: 769px) {
-    .content-section-alternative-1, 
-    .content-section-alternative-2, 
-    .content-section-alternative-3 {
+    .content-section-alternative,
+    .content-section-alternative > .section-middle {
         background-size: contain;
     }
 }
 @media screen and (max-width: 768px) {
-    .content-section-alternative-1, 
-    .content-section-alternative-2, 
-    .content-section-alternative-3 {
+    .content-section-alternative,
+    .content-section-alternative > .section-middle {
         background-size: cover;
     }
 }

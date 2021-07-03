@@ -9,6 +9,7 @@ import { Section } from '../components/Section';
 import { ClassPool } from '../components/ClassPool';
 import { Hidden } from '../components/Hidden';
 import { Image } from '../components/Image';
+import "./index.css";
 
 const content = [
     `    Наши занятия длятся <b>1 час</b> и проходят в группе <b>до 5 человек</b>. Во время обучения дети на практике учатся использовать передовые <b>технические средства</b> (3D-принтер, 3D-сканер, камера, VR-оборудование и д.р.). Также на время занятия каждому <b>ученику</b> предоставляется персональный <b>графический планшет</b>, с помощью которого он обучается работе с <b>3D-редакторами</b>.`,
@@ -17,9 +18,9 @@ const content = [
 ];
 
 export const Classes: React.FC = () => (
-    <div style={{ color: "white" }}>
+    <div className="slide-gradient">
         <Video src="video2" fullScreen />
-        <Section alt={2}>
+        <Section alt>
             {false && <PlayButton link="test" style={{
                 transform: "translate(0, -50%)"
             }} />}
@@ -39,10 +40,26 @@ export const Classes: React.FC = () => (
                         </Col>
                     </ClassPool>
                     <Hidden less="lg">
-                        <Image style={{
+                        <Image className="image-sticker" style={{
                             position: "absolute",
-                            right: "91%", top: "5%"
+                            right: "91%", top: "22%",
+                            zoom: 0.85,
                         }} src="dragon" alt="" />
+                    </Hidden>
+                    <Hidden less="md">
+                        <Image className="image-sticker" style={{
+                            position: "absolute",
+                            right: "-3%", bottom: "11%",
+                            zoom: 0.9
+                        }} src="sm3" alt="" />
+                    </Hidden>
+                    <Hidden less="md">
+                        <Image className="image-sticker" style={{
+                            position: "absolute",
+                            right: "3%", top: "-23%",
+                            transform: "rotate(-202deg)",
+                            zIndex: 10,
+                        }} src={`arrow_2_3_4_5`} alt="" />
                     </Hidden>
                 </Col>
             </Container>

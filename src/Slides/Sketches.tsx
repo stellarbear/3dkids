@@ -7,6 +7,9 @@ import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Carousel } from '../components/Carousel';
 import { Divider } from '../components/Divider';
+import { Mount } from '../components/Mount';
+import "./index.css";
+import { Hidden } from '../components/Hidden';
 
 const top = `   <b>Во время обучения мы с учениками выполняем ряд уникальных проектов, которые были созданы с целью вызвать интерес у детей к процессу обучения и на практике закрепить полученные знания:</b>`;
 
@@ -41,30 +44,48 @@ export const Sketches: React.FC = () => {
         <div style={{ color: "white" }}>
             <Image responsive src={`sketch-${content[index][1]}`} alt="sketch image" fullScreen />
             <Section>
-                <Container size="sm" style={{ overflow: "hidden" }}>
+                <Container size="sm">
                     <Col s={8} m={8}>
-                        <Title>
-                            Примеры проектов для&nbsp;наших&nbsp;учеников:
+                        <Title style={{width: "100%"}}>
+                            Примеры обучающих проектов:
                         </Title>
-                        <Divider style={{marginBottom: 8}}/>
-                        <Carousel
-                            arrows infinite
-                            onChange={setIndex}
-                            buttonStyle={{minHeight: 44}}
-                            titles={content.map(c => c[0])}
-                            top={(
-                                <Col s={16}>
-                                    <Label asHtml>{top}</Label>
-                                    <Divider/>
-                                </Col>
-                            )}
-                        >
-                            {content.map(([title, , text], index) => (
-                                <Col s={16} key={index}>
-                                    <Label asHtml>{text}</Label>
-                                </Col>
-                            ))}
-                        </Carousel>
+                        <Divider style={{marginBottom: 8, width: "100%"}}/>
+                        <Mount>
+                            <Carousel
+                                arrows infinite
+                                onChange={setIndex}
+                                buttonStyle={{minHeight: 44}}
+                                titles={content.map(c => c[0])}
+                                top={(
+                                    <Col s={16}>
+                                        <Label asHtml>{top}</Label>
+                                        <Divider/>
+                                    </Col>
+                                )}
+                            >
+                                {content.map(([, , text], index) => (
+                                    <Col s={16} key={index}>
+                                        <Label asHtml>{text}</Label>
+                                    </Col>
+                                ))}
+                            </Carousel>
+                            <Hidden less="md">
+                                <Image className="image-sticker" style={{
+                                    position: "absolute",
+                                    right: "0%", top: "-38%",
+                                    zoom: 0.9
+                                }} src="sm4" alt="" />
+                            </Hidden>
+                            <Hidden less="md">
+                                <Image className="image-sticker" style={{
+                                    position: "absolute",
+                                    left: "-4%",
+                                    top: "-33%",
+                                    transform: "scaleX(-1) rotate(-214deg)",
+                                    zIndex: 10,
+                                }} src={`arrow_2_3_4_5`} alt="" />
+                            </Hidden>
+                        </Mount>
                     </Col>
                 </Container>
             </Section>

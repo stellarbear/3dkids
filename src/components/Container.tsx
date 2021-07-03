@@ -16,7 +16,7 @@ const pick = (size: Size) => {
         case "sm":
             return 768;
         case "md":
-            return 992;
+            return 950;
         case "lg":
             return 1200;
         case "xl":

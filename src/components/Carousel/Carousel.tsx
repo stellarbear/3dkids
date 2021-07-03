@@ -57,7 +57,7 @@ export const Carousel: React.FC<IProps> = (props) => {
         <Row s={8} wrap justify="center" align="center" fullWidth>
             {
                 titles.map((title, index) => (
-                    <div
+                    <div key={index}
                         className={index !== slide ? "carousel-dot-inactive" : "carousel-dot-active"}
                         onClick={() => onCustom(index)}>
                             <div className={index !== slide ? "inactive" : "active"}/>

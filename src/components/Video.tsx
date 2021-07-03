@@ -90,7 +90,7 @@ export const Video: React.FC<IProps> = ({src, fullScreen = false, logo = false})
                         <source src={`videos/${src}.webm`} type="video/webm" />
                         <source src={`videos/${src}.mp4`} type="video/mp4" />
                     </video>
-                    <div className="test" />
+                    <div className="video-border" />
                 </div>
             </div>
         </>

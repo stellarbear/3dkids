@@ -9,6 +9,7 @@ import { Section } from '../components/Section';
 import { Hidden } from '../components/Hidden';
 import { Image } from '../components/Image';
 import { ClassPool } from '../components/ClassPool';
+import "./index.css"
 
 const content = [
     `   <b>3Dkids</b> — это команда людей, объединенных одной общей идеей:`,
@@ -18,16 +19,14 @@ const content = [
 ];
 
 export const Welcome: React.FC = () => (
-    <div style={{ color: "white" }}>
+    <div className="slide-gradient">
         <Video src="video1" fullScreen logo/>
-        <Section alt={1}>
+        <Section alt>
             <PlayButton link="https://www.youtube.com/embed/wNPn--yUPP0"/>
             <Container size="sm" overflow>
                 <Col m={8} align="flex-start" style={{ position: "relative" }}>
                     <Title alt style={{maxHeight: 100}}>
-                        Добро пожаловать
-                        <br />
-                        в сказочный мир 3D!
+                        изучать 3D с нами - это Легко и весело!
                     </Title>
                     <ClassPool type={["text-plane", "text-plane-1"]}>
                         <Col s={16} m={8}>
@@ -38,10 +37,17 @@ export const Welcome: React.FC = () => (
                         </Col>
                     </ClassPool>
                     <Hidden less="md">
-                        <Image style={{
+                        <Image className="image-sticker" style={{
                             position: "absolute",
-                            right: "84%", top: "8%"
+                            right: "87%", top: "14%", zoom: "0.85"
                         }} src="intro_knight" alt="" />
+                    </Hidden>
+                    <Hidden less="md">
+                        <Image className="image-sticker" style={{
+                            position: "absolute",
+                            right: "-2%", bottom: "3%",
+                            zoom: 0.9
+                        }} src="sm1" alt="" />
                     </Hidden>
                 </Col>
             </Container>

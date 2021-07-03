@@ -36,7 +36,7 @@ export const NavMobile: React.FC<IProps> = (props) => {
                 position: "fixed",
                 minWidth: 160,
                 left: "50%",
-                background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(79, 121, 228, 0) 0.01%, rgba(6, 25, 48, 0.88) 0.02%, rgba(11, 52, 74, 0.77) 10.94%, #021531 100%)",
+                background: "#000000DD",
                 transform: `translate(-50%, ${opened ? '-1' : '-100'}%)`,
                 transition: "all 0.3s",
                 padding: 34,

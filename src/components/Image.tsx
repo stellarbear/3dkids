@@ -1,9 +1,11 @@
 import * as React from 'react';
+import "./Image.css"
 
 interface IProps {
     src: string
     alt: string
     responsive?: boolean
+    className?: string
     fullScreen?: boolean
     style?: React.CSSProperties
 }
@@ -11,10 +13,10 @@ interface IProps {
 const threshold = 425;
 
 export const Image: React.FC<IProps> = (props) => {
-    const { src, alt, style = {}, fullScreen = false, responsive = false } = props;
+    const { src, alt, style = {}, fullScreen = false, className, responsive = false } = props;
 
     return (
-        <div>
+        <div className={className}>
             <picture>
                 {responsive && (
                     <source 

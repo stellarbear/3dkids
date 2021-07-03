@@ -4,11 +4,11 @@ import { Title } from "../components/Title";
 import { Label } from "../components/Label";
 import { Col, Row } from "../components/Flex";
 import { Container } from "../components/Container";
-import { PlayButton } from "../components/PlayButton";
 import { Section } from "../components/Section";
 import { Carousel } from "../components/Carousel";
 import { Hidden } from "../components/Hidden";
 import { Divider } from "../components/Divider";
+import { Mount } from "../components/Mount";
 
 const content = [
 	[
@@ -60,18 +60,27 @@ export const Study: React.FC = () => {
 
 	const renderImage = (icon: string) => (
 		<Hidden less="sm">
-			<Image src={icon} alt="" style={{ maxHeight: 200 }} />
+			<Image src={icon} alt="" style={{ 
+				maxHeight: 200, 
+				marginTop: -16,
+				marginBottom: 16
+			}} />
 		</Hidden>
 	);
 
 	const renderText = (text: string[]) => (
-		<Col s={8}>
-			<Label asHtml>{text[0]}</Label>
-			<Label style={{ textDecoration: "underline", marginLeft: 20 }}>
-				<b>{text[1]}</b>
-			</Label>
-			<Label asHtml>{text[2]}</Label>
-		</Col>
+		<Row>
+			<Hidden less="md">
+				<div style={{minWidth: "10%"}}/>
+			</Hidden>
+			<Col s={8}>
+				<Label asHtml>{text[0]}</Label>
+				<Label style={{ textDecoration: "underline", marginLeft: 20 }}>
+					<b>{text[1]}</b>
+				</Label>
+				<Label asHtml>{text[2]}</Label>
+			</Col>
+		</Row>
 	);
 
 	return (
@@ -80,23 +89,41 @@ export const Study: React.FC = () => {
 			<Section>
 				<Container size="md">
 					<Col s={8} m={8}>
-						<Title>Какие дисциплины мы&nbsp;изучаем?</Title>
-						<Divider style={{ marginBottom: 8 }} />
-						<Carousel
-							arrows
-							infinite
-							onChange={setIndex}
-							titles={content.map((c) => c[0].toUpperCase())}
-						>
-							{content.map(([, icon, ...text], index) => (
-								<Row m={[0, 8]} s={32} key={index} justify="center">\
-									<>
-										{renderImage(icon)}
-										{renderText(text)}
-									</>
-								</Row>
-							))}
-						</Carousel>
+						<Title style={{width: "75%"}}>Какие дисциплины мы&nbsp;преподаем?</Title>
+						<Divider style={{ marginBottom: 8, width: "75%"}} />
+						<Mount>
+							<Carousel
+								arrows
+								infinite
+								onChange={setIndex}
+								titles={content.map((c) => c[0].toUpperCase())}
+							>
+								{content.map(([, icon, ...text], index) => (
+									<Row m={[0, 8]} s={32} key={index} justify="center">\
+										<>
+											{renderText(text)}
+											{renderImage(icon)}
+										</>
+									</Row>
+								))}
+							</Carousel>
+						</Mount>
+						<Hidden less="md">
+							<Image className="image-sticker" style={{
+								position: "absolute",
+								bottom: "32%", left: "11%",
+								zoom: 0.85,
+							}} src={`course_number${index + 1}`} alt="" />
+						</Hidden>
+						<Hidden less="md">
+							<Image className="image-sticker" style={{
+								position: "absolute",
+								bottom: "46%",
+								left: "10%",
+								transform: "rotate(20deg)",
+								zoom: 1.2,
+							}} src={`arrow_2_3_4_5`} alt="" />
+						</Hidden>
 					</Col>
 				</Container>
 			</Section>

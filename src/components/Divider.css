@@ -1,4 +1,6 @@
 .divider { 
     background: #FFFFFF;
     height: 2px;
+    width: 67%;
+    margin: auto;
 }
